@@ -77,3 +77,27 @@ window.addEventListener('load', changeColorPeriodically);
 // Start on the left of the scroll video container
 
 document.querySelector('.all-video-container').scrollLeft = 0;
+
+const scrollContainer = document.querySelector('.all-video-container');
+const dots = document.querySelectorAll('.dot');
+setActiveDot(0)
+
+scrollContainer.onscroll = function() {
+  // Get the vertical scroll position of the container
+  const scrollPosition = scrollContainer.scrollLeft;  
+  const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+  const dotNum = dots.length;
+  var index = parseInt((scrollPosition - 1) / (maxScrollLeft / dotNum));
+  setActiveDot(index);
+  
+};
+
+function setActiveDot(index) {
+  dots.forEach((dot, dotIndex) => {
+    if (index === dotIndex) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}

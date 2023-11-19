@@ -91,7 +91,7 @@
   }
 
   .custom-video {
-    width: 320px;
+    width: 73vw;
     height: auto;
   }
   .contact-info-container {
@@ -132,5 +132,28 @@
   }
   #about, #projects, #contact {
     margin-bottom: 5rem;
+  }
+
+  /* Dot navigation styles */
+  .dot-container {
+    justify-content: center;
+    position: absolute;
+    /* bottom: 10px; */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #aaa; /* Inactive dot color */
+    margin: 0 5px; /* Adjust the spacing between dots */
+    cursor: pointer;
+  }
+  .dot.active {
+    background-color: #333; /* Active dot color */
   }
 }
