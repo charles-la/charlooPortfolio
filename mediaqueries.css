@@ -64,10 +64,35 @@
     height: fit-content;
     margin-bottom: 1rem;
   }
-  .about-containers,
+
   .contact-info-upper-container,
   .btn-container {
     flex-wrap: wrap;
+  }
+  
+  .all-video-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .scroll-container {
+    justify-content: left;
+    /* display: inline-block; */
+    /* margin: 8px; */
+  }
+
+  .video-container {
+    /* width:70%;
+    height:auto; */
+    /* display: inline-block; Display images in a line */
+    width: calc(100%);
+    /* white-space: nowrap; */
+  }
+
+  .custom-video {
+    width: 320px;
+    height: auto;
   }
   .contact-info-container {
     margin: 5;
@@ -104,10 +129,6 @@
   .details-container {
     flex: 100%; /* Make each item take up 100% width (full row) */
     padding: 1rem;
-  }
-  .video-container {
-    width:90%;
-    height:auto;
   }
   #about, #projects, #contact {
     margin-bottom: 5rem;

@@ -5,7 +5,7 @@ function toggleMenu() {
   icon.classList.toggle("open");
 }
 
-// Video starting when mouse is over
+// Video starting when mouse is over ---------------------------------------------------
 
 const videoContainers = document.querySelectorAll(".video-container");
 
@@ -23,7 +23,7 @@ videoContainers.forEach(container => {
   });
 });
 
-// Open a new URL
+// Open a new URL ----------------------------------------------------------------------
 
 function openLinkInNewTab() {
   // Replace the URL with the link you want to open in a new tab
@@ -33,7 +33,7 @@ function openLinkInNewTab() {
   window.open(linkURL, "_blank");
 }
 
-// Over contact Color changing
+// Over contact Color changing ---------------------------------------------------------
 
 let previousIndex = null
 
@@ -72,3 +72,8 @@ function changeColorPeriodically() {
 
 // Change the color periodically after the page loads
 window.addEventListener('load', changeColorPeriodically);
+
+
+// Start on the left of the scroll video container
+
+document.querySelector('.all-video-container').scrollLeft = 0;
