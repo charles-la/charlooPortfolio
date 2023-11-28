@@ -70,10 +70,19 @@
     flex-wrap: wrap;
   }
   
+  body {
+    overflow-x: hidden;
+    overflow-y: auto; /* or scroll */
+  }
+
   .all-video-container {
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 
   .scroll-container {
@@ -142,7 +151,7 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    margin-top: 10px;
+    margin-top: 15px;
   }
 
   .dot {
