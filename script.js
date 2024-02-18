@@ -101,3 +101,31 @@ function setActiveDot(index) {
     }
   });
 }
+
+// Scroll dot about
+
+document.querySelector('.all-details-container').scrollLeft = 0;
+
+const scrolldetailContainer = document.querySelector('.all-details-container');
+const dotsAbout = document.querySelectorAll('.dot-about');
+setActiveDotAbout(0)
+
+scrolldetailContainer.onscroll = function() {
+  // Get the vertical scroll position of the container
+  const scrollPosition = scrolldetailContainer.scrollLeft;  
+  const maxScrollLeft = scrolldetailContainer.scrollWidth - scrolldetailContainer.clientWidth;
+  const dotNum = dotsAbout.length;
+  var index = parseInt((scrollPosition - 1) / (maxScrollLeft / dotNum));
+  setActiveDotAbout(index);
+  
+};
+
+function setActiveDotAbout(index) {
+  dotsAbout.forEach((dot, dotIndex) => {
+    if (index === dotIndex) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}

@@ -1,13 +1,9 @@
 @media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
+  #profile  {
+    height: 92vh;
     margin-bottom: 6rem;
   }
-  .about-containers {
-    flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
+  #about,#projects,#contact {
     height: fit-content;
   }
 }
@@ -19,11 +15,7 @@
   #hamburger-nav {
     display: flex;
   }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
-  }
-  #profile,
+  #profile,#about,#projects
   .section-container {
     display: block;
   }
@@ -42,9 +34,6 @@
     height: 275px;
     margin: 0 auto 2rem;
   }
-  .about-containers {
-    /* margin-top: 0; */
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -54,8 +43,8 @@
     margin: 0 1rem;
   }
   #profile {
-    height: 83vh;
-    margin-bottom: 0;
+    height: 92vh;
+    margin-bottom: 0rem;
   }
   article {
     font-size: 1rem;
@@ -75,43 +64,16 @@
     overflow-y: auto; /* or scroll */
   }
 
-  .all-video-container {
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
   ::-webkit-scrollbar {
     display: none;
   }
 
-  .scroll-container {
-    justify-content: left;
-    /* display: inline-block; */
-    /* margin: 8px; */
-  }
-
-  .video-container {
-    /* width:70%;
-    height:auto; */
-    /* display: inline-block; Display images in a line */
-    width: calc(100%);
-    /* white-space: nowrap; */
-  }
-
-  .custom-video {
-    width: 73vw;
-    height: auto;
-  }
   .contact-info-container {
     margin: 5;
   }
   .contact-info-container p,
   .nav-links li a {
     font-size: 1rem;
-  }
-  .experience-sub-title {
-    font-size: 1.25rem;
   }
   .logo {
     font-size: 1.5rem;
@@ -135,16 +97,63 @@
   .text-container {
     text-align: justify;
   }
-  .details-container {
-    flex: 100%; /* Make each item take up 100% width (full row) */
-    padding: 1rem;
-  }
+
   #about, #projects, #contact {
     margin-bottom: 5rem;
   }
 
+  
+  /* About */
+
+  .details-container {
+    min-width: 80vw; /* adjust as needed */
+    height: 40vw; /* adjust as needed */
+    flex: 1; /*Make each item take up 100% width (full row)*/
+    padding: 1rem;
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .all-details-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .scroll-details-container {
+    width: calc(100%);
+    justify-content: left;
+  }
+
+  /* Projects */
+
+  /* Video section */
+
+  .all-video-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .video-container {
+    width: calc(100%);
+  }
+
+  .custom-video {
+    width: 90vw;
+    height: auto;
+  }
+
+  .scroll-container {
+    justify-content: left;
+  }
+
   /* Dot navigation styles */
-  .dot-container {
+
+  .dot-container,.dot-about-container {
     justify-content: center;
     position: absolute;
     /* bottom: 10px; */
@@ -154,15 +163,15 @@
     margin-top: 15px;
   }
 
-  .dot {
-    width: 10px;
-    height: 10px;
+  .dot,.dot-about {
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
     background-color: #aaa; /* Inactive dot color */
     margin: 0 5px; /* Adjust the spacing between dots */
     cursor: pointer;
   }
-  .dot.active {
+  .dot.active,.dot-about.active {
     background-color: #333; /* Active dot color */
   }
 }

@@ -279,7 +279,7 @@ section {
   position: relative;
 }
 
-.about-containers {
+.scroll-details-container {
   justify-content: center;
   gap: 2rem;
   margin-bottom: 0rem;
@@ -287,17 +287,17 @@ section {
   display: flex;
 }
 
-.about-details-container {
+.all-details-container {
   justify-content: center;
   flex-direction: column;
   display: flex;
 }
 
-.experience-details-container {
+/* .experience-details-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
+} */
 
 .about-pic {
   border-radius: 2rem;
@@ -445,7 +445,7 @@ article .icon {
 }
 
 .contact-info-upper-container:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .contact-info-container {
