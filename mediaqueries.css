@@ -117,10 +117,14 @@
     justify-content: center;
   }
 
-  .all-details-container {
+  .details-containers-row1,.details-containers-row2 {
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
+  }
+
+  .details-containers-row2 {
+    margin-top: 5vw;
   }
 
   .scroll-details-container {
@@ -140,11 +144,14 @@
 
   .video-container {
     width: calc(100%);
+    justify-content: center;
+    transition: transform 0.5s ease; 
   }
 
   .custom-video {
-    width: 90vw;
+    width: 75vw;
     height: auto;
+    justify-content: center
   }
 
   .scroll-container {
@@ -153,7 +160,7 @@
 
   /* Dot navigation styles */
 
-  .dot-container,.dot-about-container {
+  .dot-container,.dot-about-container-1,.dot-about-container-2 {
     justify-content: center;
     position: absolute;
     /* bottom: 10px; */
@@ -163,7 +170,7 @@
     margin-top: 15px;
   }
 
-  .dot,.dot-about {
+  .dot,.dot-about-1,.dot-about-2 {
     width: 11px;
     height: 11px;
     border-radius: 50%;
@@ -171,7 +178,7 @@
     margin: 0 5px; /* Adjust the spacing between dots */
     cursor: pointer;
   }
-  .dot.active,.dot-about.active {
+  .dot.active,.dot-about-1.active,.dot-about-2.active {
     background-color: #333; /* Active dot color */
   }
 }

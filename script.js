@@ -74,8 +74,13 @@ function changeColorPeriodically() {
 window.addEventListener('load', changeColorPeriodically);
 
 
-// Start on the left of the scroll video container
 
+// Project Section
+// -----------------------------------------------------------------------------------//
+
+
+
+// Dot
 document.querySelector('.all-video-container').scrollLeft = 0;
 
 const scrollContainer = document.querySelector('.all-video-container');
@@ -102,26 +107,57 @@ function setActiveDot(index) {
   });
 }
 
-// Scroll dot about
 
-document.querySelector('.all-details-container').scrollLeft = 0;
+// About Section
+// -----------------------------------------------------------------------------------//
+// Scroll dot about row 1
 
-const scrolldetailContainer = document.querySelector('.all-details-container');
-const dotsAbout = document.querySelectorAll('.dot-about');
-setActiveDotAbout(0)
+document.querySelector('.details-containers-row1').scrollLeft = 0;
 
-scrolldetailContainer.onscroll = function() {
+const scrolldetailContainer1 = document.querySelector('.details-containers-row1');
+const dotsAbout1 = document.querySelectorAll('.dot-about-1');
+setActiveDotAbout1(0)
+
+scrolldetailContainer1.onscroll = function() {
   // Get the vertical scroll position of the container
-  const scrollPosition = scrolldetailContainer.scrollLeft;  
-  const maxScrollLeft = scrolldetailContainer.scrollWidth - scrolldetailContainer.clientWidth;
-  const dotNum = dotsAbout.length;
+  const scrollPosition = scrolldetailContainer1.scrollLeft;  
+  const maxScrollLeft = scrolldetailContainer1.scrollWidth - scrolldetailContainer1.clientWidth;
+  const dotNum = dotsAbout1.length;
   var index = parseInt((scrollPosition - 1) / (maxScrollLeft / dotNum));
-  setActiveDotAbout(index);
+  setActiveDotAbout1(index);
   
 };
 
-function setActiveDotAbout(index) {
-  dotsAbout.forEach((dot, dotIndex) => {
+function setActiveDotAbout1(index) {
+  dotsAbout1.forEach((dot, dotIndex) => {
+    if (index === dotIndex) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+// Scroll dot about row 2
+
+document.querySelector('.details-containers-row2').scrollLeft = 0;
+
+const scrolldetailContainer2 = document.querySelector('.details-containers-row2');
+const dotsAbout2 = document.querySelectorAll('.dot-about-2');
+setActiveDotAbout2(0)
+
+scrolldetailContainer2.onscroll = function() {
+  // Get the vertical scroll position of the container
+  const scrollPosition = scrolldetailContainer2.scrollLeft;  
+  const maxScrollLeft = scrolldetailContainer2.scrollWidth - scrolldetailContainer2.clientWidth;
+  const dotNum = dotsAbout2.length;
+  var index = parseInt((scrollPosition - 1) / (maxScrollLeft / dotNum));
+  setActiveDotAbout2(index);
+  
+};
+
+function setActiveDotAbout2(index) {
+  dotsAbout2.forEach((dot, dotIndex) => {
     if (index === dotIndex) {
       dot.classList.add('active');
     } else {
