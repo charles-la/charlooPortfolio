@@ -35,50 +35,47 @@ function openLinkInNewTab() {
 
 // Over contact Color changing ---------------------------------------------------------
 
-let previousIndex = null
+// let previousIndex = null
 
-function getRandomPastelColor(alpha) {
-  const pastelColors = [
-      '255, 182, 193',  // LightPink
-      '135, 206, 235',  // SkyBlue
-      '152, 251, 152',  // PaleGreen
-      '255, 160, 122',  // LightSalmon
-      '255, 215, 0',    // Gold
-      '173, 216, 230',  // LightBlue
-      '255, 105, 180',  // HotPink
-      '216, 191, 216',  // Thistle
-      '152, 251, 152',  // PaleGreen
-      '135, 206, 250'   // LightSkyBlue
-  ];
+// function getRandomPastelColor(alpha) {
+//   const pastelColors = [
+//       '255, 182, 193',  // LightPink
+//       '135, 206, 235',  // SkyBlue
+//       '152, 251, 152',  // PaleGreen
+//       '255, 160, 122',  // LightSalmon
+//       '255, 215, 0',    // Gold
+//       '173, 216, 230',  // LightBlue
+//       '255, 105, 180',  // HotPink
+//       '216, 191, 216',  // Thistle
+//       '152, 251, 152',  // PaleGreen
+//       '135, 206, 250'   // LightSkyBlue
+//   ];
 
-  do {
-    randomIndex = Math.floor(Math.random() * pastelColors.length);
-  } while (randomIndex === previousIndex);
+//   do {
+//     randomIndex = Math.floor(Math.random() * pastelColors.length);
+//   } while (randomIndex === previousIndex);
   
-  previousIndex = randomIndex;
+//   previousIndex = randomIndex;
 
-  return `rgba(${pastelColors[randomIndex]}, ${alpha})`;
-}
+//   return `rgba(${pastelColors[randomIndex]}, ${alpha})`;
+// }
 
-function changeColorPeriodically() {
-  const element = document.querySelector('.contact-info-upper-container');
-  setInterval(function () {
-    // const color = getRandomAlphaColor(150, 240, 0.7, 20);
-    const color = getRandomPastelColor(0.6);
-    element.style.borderColor = color;
-    element.style.background = color;
-  }, 500); // Change the color every 500 milliseconds
-}
+// function changeColorPeriodically() {
+//   const element = document.querySelector('.contact-info-upper-container');
+//   setInterval(function () {
+//     // const color = getRandomAlphaColor(150, 240, 0.7, 20);
+//     const color = getRandomPastelColor(0.6);
+//     element.style.borderColor = color;
+//     element.style.background = color;
+//   }, 500); // Change the color every 500 milliseconds
+// }
 
-// Change the color periodically after the page loads
-window.addEventListener('load', changeColorPeriodically);
-
+// // Change the color periodically after the page loads
+// window.addEventListener('load', changeColorPeriodically);
 
 
 // Project Section
 // -----------------------------------------------------------------------------------//
-
-
 
 // Dot
 document.querySelector('.all-video-container').scrollLeft = 0;
@@ -107,9 +104,7 @@ function setActiveDot(index) {
   });
 }
 
-
-// About Section
-// -----------------------------------------------------------------------------------//
+// About
 // Scroll dot about row 1
 
 document.querySelector('.details-containers-row1').scrollLeft = 0;
@@ -165,3 +160,9 @@ function setActiveDotAbout2(index) {
     }
   });
 }
+
+// Project
+
+$('input').on('change', function() {
+  $('body').toggleClass('black');
+});

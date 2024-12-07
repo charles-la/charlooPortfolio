@@ -1,255 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
-    <!-- Define Favicon -->
-    <!-- <link rel="icon" href="assets/icones/favicon.ico" type="image/x-icon"> -->
-    <title>Charloo - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Charloo</div>
-      <div>
-        <ul class="nav-links">  
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <!-- Define Favicon -->
+  <!-- <link rel="icon" href="assets/icones/favicon.ico" type="image/x-icon"> -->
+  <title>Charloo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+
+<body>
+  <nav id="desktop-nav">
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <input type="checkbox" role="button" aria-label="Display the menu" class="menu" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger-menu">
+      <span></span> <!-- These spans will be styled as lines -->
+      <span></span>
+      <span></span>
+    </label>
+    <div class="menu-links">
+      <li><a href="#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="section__pic-container">
+      <img src="./assets/photos/charloo.png" alt="Charles Langlois profile picture" />
+    </div>
+    <div class="section__text">
+      <h1 class="title">Charloo</h1>
+      <p class="section__text__p2">Music Producer</p>
+      <div id="socials-container">
+        <a href='https://open.spotify.com/artist/5tu0ILyIfyD6UbvQTTDy7C?si=8m1AErmNQ0u3cRcCiBTNXw' target="_blank">
+          <img src="./assets/icones/networks/spotify.png" alt="My spotify profile" class="icon-network" />
+        </a>
+        <a href='https://music.apple.com/us/artist/charloo/1586417153' target="_blank">
+          <img src="./assets/icones/networks/apple-music.png" alt="My spotify profile" class="icon-network" />
+        </a>
+        <a href='https://www.instagram.com/charloo._/' target="_blank">
+          <img src="./assets/icones/networks/instagram.png" alt="My instagram profile" class="icon-network" />
+        </a>
+        <a href='https://www.youtube.com/@charloo6448/featured' target="_blank">
+          <img src="./assets/icones/networks/youtube.png" alt="My youtube profile" class="icon-network" />
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="all-details-container">
+      <div class="details-containers-row1">
+        <div class="scroll-details-container">
+          <div class="details-container">
+            <img src="./assets/icones/about/experience.png" alt="Experience icon" class="icon" />
+            <h3>Experience</h3>
+            <p>+3 years<br />Producing music in my bedroom</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/icones/about/school.png" alt="Education icon" class="icon" />
+            <h3>Education</h3>
+            <p>B.Sc. Computer Sciences<br />Sherbrooke University, Qc, Ca</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/icones/about/location-pointer.png" alt="Location icon" class="icon" />
+            <h3>Location</h3>
+            <p>Currently living in<br />Montréal</p>
+          </div>
+        </div>
+        <div class="dot-about-container-1">
+          <div class="dot-about-1"></div>
+          <div class="dot-about-1"></div>
+          <div class="dot-about-1"></div>
+        </div>
+      </div>
+      <div class="details-containers-row2">
+        <div class="scroll-details-container">
+          <div class="details-container">
+            <img src="./assets/icones/about/user.png" alt="MusicGenre icon" class="icon" />
+            <h3>Music Genre</h3>
+            <p>RnB, Lo-Fi, Chill,<br />Hip-Hop, Soul, Indie</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/icones/about/education.png" alt="Collab icon" class="icon" />
+            <h3>Collab</h3>
+            <p>Ready and willing to partner<br />with artists for projects</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/icones/about/heart.png" alt="Love icon" class="icon" />
+            <h3>Love</h3>
+            <p>Continuously dreaming<br />Keep trying new stuff</p>
+          </div>
+        </div>
+        <div class="dot-about-container-2">
+          <div class="dot-about-2"></div>
+          <div class="dot-about-2"></div>
+          <div class="dot-about-2"></div>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/icones/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
+  </section>
+  <section id="projects">
+    <div class="title-container">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+    </div>
+    <div class="container-project">
+      <input type="radio" name="slider" id="item-1" checked>
+      <input type="radio" name="slider" id="item-2">
+      <input type="radio" name="slider" id="item-3">
+      <div class="cards">
+        <label class="card" for="item-1" id="song-1">
+          <img src="./assets/cover/Laisser-Aller.PNG" alt="song">
+        </label>
+        <label class="card" for="item-2" id="song-2">
+          <img src="./assets/cover/FraicheurEte.PNG" alt="song">
+        </label>
+        <label class="card" for="item-3" id="song-3">
+          <img src="./assets/cover/Persister.PNG" alt="song">
+        </label>
+      </div>
+      <div class="player">
+        <div class="upper-part">
+          <div class="play-icon">
+            <svg width="20" height="20" fill="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
+              <defs />
+              <path d="M5 3l14 9-14 9V3z" />
+            </svg>
+          </div>
+          <div class="info-area" id="test">
+            <label class="song-info" id="song-info-1">
+              <div class="title">Sample 1</div>
+              <div class="sub-line">
+                <div class="subtitle">Charloo</div>
+                <div class="time">4.05</div>
+              </div>
+            </label>
+            <label class="song-info" id="song-info-2">
+              <div class="title">Sample 2</div>
+              <div class="sub-line">
+                <div class="subtitle">Charloo</div>
+                <div class="time">4.05</div>
+              </div>
+            </label>
+            <label class="song-info" id="song-info-3">
+              <div class="title">Sample 3</div>
+              <div class="sub-line">
+                <div class="subtitle">Charloo</div>
+                <div class="time">4.05</div>
+              </div>
+            </label>
+          </div>
+        </div> 
+        <div class="progress-bar">
+          <span class="progress"></span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="./assets/icones/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
+    </div>
+  </section>
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container" onclick="openLinkInNewTab()">
+      <div class="contact-info-container">
+        <img src="./assets/icones/networks/instagram.png" alt="instagram icon" class="icon contact-icon" />
+        <p class="IG">charloo._</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <div id="socials-container">
+            <a href='https://open.spotify.com/artist/5tu0ILyIfyD6UbvQTTDy7C?si=8m1AErmNQ0u3cRcCiBTNXw' target="_blank">
+              <img src="./assets/icones/networks/spotify.png" alt="My spotify profile" class="icon-network" />
+            </a>
+            <a href='https://music.apple.com/us/artist/charloo/1586417153' target="_blank">
+              <img src="./assets/icones/networks/apple-music.png" alt="My spotify profile" class="icon-network" />
+            </a>
+            <a href='https://www.youtube.com/@charloo6448/featured' target="_blank">
+              <img src="./assets/icones/networks/youtube.png" alt="My youtube profile" class="icon-network" />
+            </a>
+          </div>
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Charloo</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/photos/charloo.png" alt="Charles Langlois profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hey, I'm</p>
-        <h1 class="title">Charles Langlois</h1>
-        <p class="section__text__p2">Music Producer</p>
-        <div id="socials-container">
-          <a href='https://open.spotify.com/artist/5tu0ILyIfyD6UbvQTTDy7C?si=8m1AErmNQ0u3cRcCiBTNXw' target="_blank">
-            <img
-                src="./assets/icones/networks/spotify.png"
-                alt="My spotify profile"
-                class="icon-network"
-            />
-          </a>
-          <a href='https://music.apple.com/us/artist/charloo/1586417153' target="_blank">
-            <img
-                src="./assets/icones/networks/apple-music.png"
-                alt="My spotify profile"
-                class="icon-network"
-            />
-          </a>
-          <a href='https://www.instagram.com/charloo._/' target="_blank">
-            <img
-                src="./assets/icones/networks/instagram.png"
-                alt="My instagram profile"
-                class="icon-network"
-            />
-          </a>
-          <a href='https://www.youtube.com/@charloo6448/featured' target="_blank">
-            <img
-                src="./assets/icones/networks/youtube.png"
-                alt="My youtube profile"
-                class="icon-network"
-            />
-          </a>
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="all-details-container">
-        <div class="details-containers-row1">
-          <div class="scroll-details-container">
-            <div class="details-container">
-              <img
-                src="./assets/icones/about/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>+3 years<br />Producing music in my bedroom</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/icones/about/school.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Sc. Computer Sciences<br />Sherbrooke University, Qc, Ca</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/icones/about/location-pointer.png"
-                alt="Location icon"
-                class="icon"
-              />
-              <h3>Location</h3>
-              <p>Currently living in<br />Montréal</p>
-            </div>
-          </div>  
-          <div class="dot-about-container-1">
-            <div class="dot-about-1"></div>
-            <div class="dot-about-1"></div>
-            <div class="dot-about-1"></div>
-          </div>
-        </div>
-        <div class="details-containers-row2">
-          <div class="scroll-details-container">
-            <div class="details-container">
-              <img
-                src="./assets/icones/about/user.png"
-                alt="MusicGenre icon"
-                class="icon"
-              />
-              <h3>Music Genre</h3>
-              <p>RnB, Lo-Fi, Chill,<br />Hip-Hop, Soul, Indie</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/icones/about/education.png"
-                alt="Collab icon"
-                class="icon"
-              />
-              <h3>Collab</h3>
-              <p>Ready and willing to partner<br />with artists for projects</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/icones/about/heart.png"
-                alt="Love icon"
-                class="icon"
-              />
-              <h3>Love</h3>
-              <p>Continuously dreaming<br />Keep trying new stuff</p>
-            </div>
-          </div>
-          <div class="dot-about-container-2">
-            <div class="dot-about-2"></div>
-            <div class="dot-about-2"></div>
-            <div class="dot-about-2"></div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/icones/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="all-video-container">
-        <div class="scroll-container">
-          <div class="video-container">
-            <video class="custom-video" controls poster="assets/videos/CoverSample1.jpg">
-                <source src="assets/videos/Sample1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="video-container">
-            <video class="custom-video" controls poster="assets/videos/CoverSample2.jpg">
-                <source src="assets/videos/Sample2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="video-container">
-            <video class="custom-video" controls poster="assets/videos/CoverSample3.jpg">
-                <source src="assets/videos/Sample3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="video-container">
-            <video class="custom-video" controls poster="assets/videos/CoverSample4.jpg">
-                <source src="assets/videos/Sample4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
-      <div class="dot-container">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-      </div>
-      <img
-        src="./assets/icones/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container" onclick="openLinkInNewTab()">
-        <div class="contact-info-container">
-          <img
-            src="./assets/icones/networks/instagram.png"
-            alt="instagram icon"
-            class="icon contact-icon"
-          />
-          <p class="IG">charloo._</p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <div id="socials-container">
-              <a href='https://open.spotify.com/artist/5tu0ILyIfyD6UbvQTTDy7C?si=8m1AErmNQ0u3cRcCiBTNXw' target="_blank">
-                <img
-                    src="./assets/icones/networks/spotify.png"
-                    alt="My spotify profile"
-                    class="icon-network"
-                />
-              </a>
-              <a href='https://music.apple.com/us/artist/charloo/1586417153' target="_blank">
-                <img
-                    src="./assets/icones/networks/apple-music.png"
-                    alt="My spotify profile"
-                    class="icon-network"
-                />
-              </a>
-              <a href='https://www.youtube.com/@charloo6448/featured' target="_blank">
-                <img
-                    src="./assets/icones/networks/youtube.png"
-                    alt="My youtube profile"
-                    class="icon-network"
-                />
-              </a>
-            </div>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2023 Charles Langlois. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    <p>Copyright &#169; 2023 Charles Langlois. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -1,34 +1,41 @@
 @media screen and (max-width: 1400px) {
-  #profile  {
+  #profile {
     height: 92vh;
     margin-bottom: 6rem;
   }
-  #about,#projects,#contact {
+
+  #about,
+  #contact {
     height: fit-content;
   }
 }
-  
+
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
   }
+
   #hamburger-nav {
     display: flex;
   }
-  #profile,#about,#projects
-  .section-container {
+
+  #profile,
+  #about .section-container {
     display: block;
   }
+
   .arrow {
     display: none;
   }
-  section,
+
   .section-container {
     height: fit-content;
   }
+
   section {
     margin: 0 5%;
   }
+
   .section__pic-container {
     width: 275px;
     height: 275px;
@@ -37,18 +44,21 @@
 }
 
 @media screen and (max-width: 600px) {
-  
+
   footer {
     height: 20vh;
     margin: 0 1rem;
   }
+
   #profile {
     height: 92vh;
     margin-bottom: 0rem;
   }
+
   article {
     font-size: 1rem;
   }
+
   footer nav {
     height: fit-content;
     margin-bottom: 1rem;
@@ -58,57 +68,70 @@
   .btn-container {
     flex-wrap: wrap;
   }
-  
+
   body {
     overflow-x: hidden;
-    overflow-y: auto; /* or scroll */
-  }
-
-  ::-webkit-scrollbar {
-    display: none;
+    overflow-y: auto;
+    /* or scroll */
   }
 
   .contact-info-container {
     margin: 5;
   }
+
   .contact-info-container p,
   .nav-links li a {
     font-size: 1rem;
   }
+
   .logo {
     font-size: 1.5rem;
   }
+
   .nav-links {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
   }
+
   .section__pic-container {
     width: auto;
     height: 58vw;
     justify-content: center;
   }
+
   .section__text__p2 {
     font-size: 1.25rem;
   }
+
   .title {
     font-size: 2rem;
   }
+
   .text-container {
     text-align: justify;
   }
 
-  #about, #projects, #contact {
+  #about,
+  #projects,
+  #contact {
     margin-bottom: 5rem;
   }
 
-  
+  .player {
+    top: 200px;
+  }
+
+
   /* About */
 
   .details-container {
-    min-width: 80vw; /* adjust as needed */
-    height: 40vw; /* adjust as needed */
-    flex: 1; /*Make each item take up 100% width (full row)*/
+    min-width: 80vw;
+    /* adjust as needed */
+    height: 40vw;
+    /* adjust as needed */
+    flex: 1;
+    /*Make each item take up 100% width (full row)*/
     padding: 1rem;
     position: relative;
     align-items: center;
@@ -117,7 +140,8 @@
     justify-content: center;
   }
 
-  .details-containers-row1,.details-containers-row2 {
+  .details-containers-row1,
+  .details-containers-row2 {
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
@@ -132,35 +156,11 @@
     justify-content: left;
   }
 
-  /* Projects */
-
-  /* Video section */
-
-  .all-video-container {
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .video-container {
-    width: calc(100%);
-    justify-content: center;
-    transition: transform 0.5s ease; 
-  }
-
-  .custom-video {
-    width: 75vw;
-    height: auto;
-    justify-content: center
-  }
-
-  .scroll-container {
-    justify-content: left;
-  }
-
   /* Dot navigation styles */
 
-  .dot-container,.dot-about-container-1,.dot-about-container-2 {
+  .dot-container,
+  .dot-about-container-1,
+  .dot-about-container-2 {
     justify-content: center;
     position: absolute;
     /* bottom: 10px; */
@@ -170,15 +170,23 @@
     margin-top: 15px;
   }
 
-  .dot,.dot-about-1,.dot-about-2 {
+  .dot,
+  .dot-about-1,
+  .dot-about-2 {
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background-color: #aaa; /* Inactive dot color */
-    margin: 0 5px; /* Adjust the spacing between dots */
+    background-color: #aaa;
+    /* Inactive dot color */
+    margin: 0 5px;
+    /* Adjust the spacing between dots */
     cursor: pointer;
   }
-  .dot.active,.dot-about-1.active,.dot-about-2.active {
-    background-color: #333; /* Active dot color */
+
+  .dot.active,
+  .dot-about-1.active,
+  .dot-about-2.active {
+    background-color: #333;
+    /* Active dot color */
   }
 }
