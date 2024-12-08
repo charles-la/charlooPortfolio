@@ -34,6 +34,7 @@ nav,
 }
 
 nav {
+  background-color: rgb(255, 255, 255);
   justify-content: space-around;
   align-items: center;
   height: 17vh;
@@ -160,7 +161,7 @@ section {
 /* Arrow */
 .arrow {
   position: absolute;
-  right: -5rem;
+  right: 1rem;
   bottom: 2.5rem;
   cursor: pointer;
   transition: transform 0.3s;
@@ -173,10 +174,45 @@ section {
 /* PROFILE SECTION */
 
 #profile {
+  /* filter: brightness(250%); */
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
+  background-image: url('assets/photos/charloo.png');
+  background-size: 120%;
+  /* Scales both dimensions proportionally */
+  background-repeat: no-repeat;
+  background-position: center center;
   display: flex;
   justify-content: center;
   gap: 5rem;
   height: 80vh;
+}
+
+#about {
+  background-color: rgba(26, 26, 26, 0.8);
+  background-blend-mode: lighten;
+  background-image: url('assets/photos/darkbike3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#projects {
+  background-color: rgb(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
+  background-image: url('assets/photos/bikeday.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#contact {
+  background-color: rgba(125, 125, 125, 0.95);
+  background-blend-mode: lighten;
+  background-image: url('assets/photos/Marche.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .section__pic-container {
@@ -307,20 +343,18 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) translateX(200px);
-  width: 70%;
+  width: 50%;
   text-align: center;
   opacity: 0;
   padding: 1rem;
-  background: white;
-  border-radius: 3rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  background: rgba(179, 179, 179, 0.8);
+  border-radius: 1rem;
   text-align: center;
   animation: display 30s infinite;
 }
 
 .section-container {
-  gap: 4rem;
+  gap: 2rem;
   height: 80%;
 }
 
@@ -445,6 +479,7 @@ input[type=radio] {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: grayscale(100%);
   /* Ensures the image fills the square without distortion */
   border-radius: 8px;
   /* Optional: Adds rounded corners */
@@ -460,7 +495,7 @@ input[type=radio] {
 
 .player {
   position: relative;
-  background-color: #fff;
+  background-color: rgba(36, 36, 36, 0.4);
   border-radius: 8px;
   min-width: 220px;
   padding: 16px 10px;
