@@ -17,7 +17,7 @@
 
   #hamburger-nav {
     display: flex;
-    height: 6vh;
+    height: 8vh;
   }
 
   #profile,
@@ -68,6 +68,10 @@
   
   #projects {
     background-position: 30% 0%; /* Moves the image to the far right and centers it vertically */
+  }
+  #contact {
+    background-size: 160%;
+    background-position: 50% 100%;
   }
 
   article {
