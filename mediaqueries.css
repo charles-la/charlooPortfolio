@@ -59,7 +59,8 @@
   #about,
   #projects,
   #contact {
-    height: 55vh;
+    height: 65vh;
+    margin-bottom: 0rem;
   }
 
   article {
@@ -123,15 +124,11 @@
     top: 230px;
   }
 
-  .title-container {
-    margin-bottom: 30px;
-  }
-
   /* About */
   .details-container {
     height: 25vw;
     width: 55vw;
-    top: 50%
+    top: 29vw
   }
 
   .text-ctn {
