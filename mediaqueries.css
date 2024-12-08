@@ -45,14 +45,21 @@
 
 @media screen and (max-width: 600px) {
 
+
   footer {
     height: 20vh;
     margin: 0 1rem;
   }
 
   #profile {
-    height: 92vh;
+    height: 75vh;
     margin-bottom: 0rem;
+  }
+
+  #about,
+  #projects,
+  #contact {
+    height: 55vh;
   }
 
   article {
@@ -112,21 +119,19 @@
     text-align: justify;
   }
 
-  #about,
-  #projects,
-  #contact {
-    margin-bottom: 5rem;
-  }
-
   .player {
     top: 230px;
   }
 
+  .title-container {
+    margin-bottom: 30px;
+  }
+
   /* About */
   .details-container {
-    height: 30vw;
-    width: 45vw;
-    top: 30%
+    height: 25vw;
+    width: 55vw;
+    top: 50%
   }
 
   .text-ctn {
