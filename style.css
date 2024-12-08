@@ -498,11 +498,11 @@ input[type=radio] {
 .player {
   position: relative;
   background-blend-mode: lighten;
-  background-image: url('assets/cover/FraicheurEte.PNG');
+  background-image: url('assets/cover/album_cover.PNG');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
   filter: brightness(140%);
   border-radius: 8px;
   min-width: 220px;
