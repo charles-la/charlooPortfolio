@@ -119,74 +119,17 @@
   }
 
   .player {
-    top: 200px;
+    top: 230px;
   }
-
 
   /* About */
-
   .details-container {
-    min-width: 80vw;
-    /* adjust as needed */
-    height: 40vw;
-    /* adjust as needed */
-    flex: 1;
-    /*Make each item take up 100% width (full row)*/
-    padding: 1rem;
-    position: relative;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 30vw;
+    width: 45vw;
+    top: 30%
   }
 
-  .details-containers-row1,
-  .details-containers-row2 {
+  .text-ctn {
     width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .details-containers-row2 {
-    margin-top: 5vw;
-  }
-
-  .scroll-details-container {
-    width: calc(100%);
-    justify-content: left;
-  }
-
-  /* Dot navigation styles */
-
-  .dot-container,
-  .dot-about-container-1,
-  .dot-about-container-2 {
-    justify-content: center;
-    position: absolute;
-    /* bottom: 10px; */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    margin-top: 15px;
-  }
-
-  .dot,
-  .dot-about-1,
-  .dot-about-2 {
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background-color: #aaa;
-    /* Inactive dot color */
-    margin: 0 5px;
-    /* Adjust the spacing between dots */
-    cursor: pointer;
-  }
-
-  .dot.active,
-  .dot-about-1.active,
-  .dot-about-2.active {
-    background-color: #333;
-    /* Active dot color */
   }
 }
