@@ -65,13 +65,13 @@
     height: 75vh;
     margin-bottom: 0rem;
   }
-  
   #projects {
-    background-position: 30% 0%; /* Moves the image to the far right and centers it vertically */
+    background-size: 370%;
+    background-position: 35% 30%; /* Moves the image to the far right and centers it vertically */
   }
   #contact {
-    background-size: 160%;
-    background-position: 50% 100%;
+    background-size: 170%;
+    background-position: 50% 80%;
   }
 
   article {
