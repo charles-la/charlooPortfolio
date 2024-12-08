@@ -17,7 +17,7 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: rgb(52, 52, 52);
 }
 
 /* TRANSITION */
@@ -188,16 +188,16 @@ section {
   height: 80vh;
 }
 
-#about {
-  background-color: rgba(26, 26, 26, 0.8);
+#projects {
+  background-color: rgba(71, 71, 71, 0.8);
   background-blend-mode: lighten;
-  background-image: url('assets/photos/darkbike3.jpg');
+  background-image: url('assets/photos/darkbike2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#projects {
+#about {
   background-color: rgb(255, 255, 255, 0.8);
   background-blend-mode: lighten;
   background-image: url('assets/photos/bikeday.jpeg');
@@ -233,6 +233,8 @@ section {
 
 .section__text__p1 {
   text-align: center;
+  font-size: 1.2rem;
+  color: rgb(26, 26, 26);
 }
 
 .section__text__p2 {
@@ -347,7 +349,7 @@ section {
   text-align: center;
   opacity: 0;
   padding: 1rem;
-  background: rgba(179, 179, 179, 0.8);
+  background: rgba(21, 21, 21, 0.2);
   border-radius: 1rem;
   text-align: center;
   animation: display 30s infinite;
@@ -410,14 +412,14 @@ section {
 }
 
 /* Dot navigation styles */
-
-/* .dot-container {
+/* 
+.dot-container {
   justify-content: center;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 .dot {
@@ -479,7 +481,7 @@ input[type=radio] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(40%);
+  filter: grayscale(100%);
   /* Ensures the image fills the square without distortion */
   border-radius: 8px;
   /* Optional: Adds rounded corners */
@@ -495,7 +497,7 @@ input[type=radio] {
 
 .player {
   position: relative;
-  background-color: rgba(36, 36, 36, 0.1);
+  background-color: rgba(229, 229, 229, 0.3);
   border-radius: 8px;
   min-width: 220px;
   padding: 16px 10px;
@@ -506,7 +508,7 @@ input[type=radio] {
 #item-2:checked~.cards #song-1,
 #item-3:checked~.cards #song-2 {
   transform: translatex(-60%) scale(.7);
-  opacity: .4;
+  opacity: .8;
   z-index: 0;
 }
 
@@ -514,7 +516,7 @@ input[type=radio] {
 #item-2:checked~.cards #song-3,
 #item-3:checked~.cards #song-1 {
   transform: translatex(60%) scale(.7);
-  opacity: .4;
+  opacity: .8;
   z-index: 0;
 }
 
@@ -549,7 +551,7 @@ input[type=radio] {
 }
 
 .song-info .title {
-  color: #403d40;
+  color: #000000;
   font-size: 14px;
   line-height: 24px;
 }
@@ -564,13 +566,13 @@ input[type=radio] {
 .time {
   font-size: 12px;
   line-height: 16px;
-  color: #c6c5c6;
+  color: #010101;
 }
 
 .time {
   font-size: 12px;
   line-height: 16px;
-  color: #a5a5a5;
+  color: #020202;
   font-weight: 500;
   margin-left: auto;
 }
@@ -578,8 +580,7 @@ input[type=radio] {
 .progress-bar {
   height: 3px;
   width: 100%;
-  background-color: #e9efff;
-  border-radius: 2px;
+  background-color: #5d5d5d;
   overflow: hidden;
 }
 

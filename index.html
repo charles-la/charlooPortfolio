@@ -26,7 +26,7 @@
     <button class="menu"
       onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
       aria-label="Main Menu">
-      <svg width="60" height="60" viewBox="0 0 100 100">
+      <svg width="50" height="50" viewBox="0 0 100 100">
         <path class="line line1"
           d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
         <path class="line line2" d="M 20,50 H 80" />
@@ -66,6 +66,68 @@
           <img src="./assets/icones/networks/youtube.png" alt="My youtube profile" class="icon-network" />
         </a>
       </div>
+    </div>
+  </section>
+  <section id="projects">
+    <div class="title-container">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+    </div>
+    <div class="container-project">
+      <input type="radio" name="slider" id="item-1" checked>
+      <input type="radio" name="slider" id="item-2">
+      <input type="radio" name="slider" id="item-3">
+      <div class="cards">
+        <label class="card" for="item-1" id="song-1">
+          <img src="./assets/cover/FraicheurEte.PNG" alt="song">
+        </label>
+        <label class="card" for="item-2" id="song-2">
+          <img src="./assets/cover/FraicheurEte.PNG" alt="song">
+        </label>
+        <label class="card" for="item-3" id="song-3">
+          <img src="./assets/cover/FraicheurEte.PNG" alt="song">
+        </label>
+      </div>
+      <div class="player">
+        <div class="upper-part">
+          <div class="play-icon">
+            <svg width="20" height="20" fill="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
+              <defs />
+              <path d="M5 3l14 9-14 9V3z" />
+            </svg>
+          </div>
+          <div class="info-area" id="test">
+            <label class="song-info" id="song-info-1">
+              <div class="title">Sample 1</div>
+              <div class="sub-line">
+                <div class="subtitle">Charloo</div>
+                <div class="time">4.05</div>
+              </div>
+            </label>
+            <label class="song-info" id="song-info-2">
+              <div class="title">Sample 2</div>
+              <div class="sub-line">
+                <div class="subtitle">Charloo</div>
+                <div class="time">4.05</div>
+              </div>
+            </label>
+            <label class="song-info" id="song-info-3">
+              <div class="title">Sample 3</div>
+              <div class="sub-line">
+                <div class="subtitle">Charloo</div>
+                <div class="time">4.05</div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <span class="progress"></span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="./assets/icones/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
     </div>
   </section>
   <section id="about">
@@ -117,71 +179,9 @@
     </div>
     <img src="./assets/icones/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
   </section>
-  <section id="projects">
-    <div class="title-container">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-    </div>
-    <div class="container-project">
-      <input type="radio" name="slider" id="item-1" checked>
-      <input type="radio" name="slider" id="item-2">
-      <input type="radio" name="slider" id="item-3">
-      <div class="cards">
-        <label class="card" for="item-1" id="song-1">
-          <img src="./assets/cover/Laisser-Aller.PNG" alt="song">
-        </label>
-        <label class="card" for="item-2" id="song-2">
-          <img src="./assets/cover/FraicheurEte.PNG" alt="song">
-        </label>
-        <label class="card" for="item-3" id="song-3">
-          <img src="./assets/cover/Persister.PNG" alt="song">
-        </label>
-      </div>
-      <div class="player">
-        <div class="upper-part">
-          <div class="play-icon">
-            <svg width="20" height="20" fill="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
-              <defs />
-              <path d="M5 3l14 9-14 9V3z" />
-            </svg>
-          </div>
-          <div class="info-area" id="test">
-            <label class="song-info" id="song-info-1">
-              <div class="title">Sample 1</div>
-              <div class="sub-line">
-                <div class="subtitle">Charloo</div>
-                <div class="time">4.05</div>
-              </div>
-            </label>
-            <label class="song-info" id="song-info-2">
-              <div class="title">Sample 2</div>
-              <div class="sub-line">
-                <div class="subtitle">Charloo</div>
-                <div class="time">4.05</div>
-              </div>
-            </label>
-            <label class="song-info" id="song-info-3">
-              <div class="title">Sample 3</div>
-              <div class="sub-line">
-                <div class="subtitle">Charloo</div>
-                <div class="time">4.05</div>
-              </div>
-            </label>
-          </div>
-        </div>
-        <div class="progress-bar">
-          <span class="progress"></span>
-        </div>
-      </div>
-    </div>
-    <div>
-      <img src="./assets/icones/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
-    </div>
-  </section>
   <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
     <div class="contact-info-upper-container" onclick="openLinkInNewTab()">
       <div class="contact-info-container">
         <img src="./assets/icones/networks/instagram.png" alt="instagram icon" class="icon contact-icon" />

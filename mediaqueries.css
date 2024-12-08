@@ -17,6 +17,7 @@
 
   #hamburger-nav {
     display: flex;
+    height: 6vh;
   }
 
   #profile,
@@ -47,14 +48,15 @@
 
 
   footer {
-    height: 20vh;
-    margin: 0 1rem;
+    height: 10vh;
+    margin: 0rem;
+    font-size: 0.7rem;
   }
 
   #profile {
-    height: 75vh;
+    height: 80vh;
     margin-bottom: 0rem;
-    background-size: 200%;
+    background-size: 240%;
   }
 
   #about,
@@ -63,6 +65,10 @@
     height: 75vh;
     margin-bottom: 0rem;
   }
+  
+  #projects {
+    background-position: 30% 0%; /* Moves the image to the far right and centers it vertically */
+  }
 
   article {
     font-size: 1rem;
@@ -70,7 +76,7 @@
 
   footer nav {
     height: fit-content;
-    margin-bottom: 1rem;
+    margin-bottom: 0.15rem;
   }
 
   .contact-info-upper-container,
