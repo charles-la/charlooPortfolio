@@ -498,7 +498,7 @@ input[type=radio] {
 .player {
   position: relative;
   background-blend-mode: lighten;
-  background-image: url('assets/cover/album_cover.PNG');
+  background-image: url('assets/photos/darkbike2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
