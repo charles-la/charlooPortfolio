@@ -1,9 +1,35 @@
+// function toggleMenu() {
+//   const menu = document.querySelector(".menu-links");
+//   const icon = document.querySelector(".hamburger-icon");
+//   menu.classList.toggle("open");
+//   icon.classList.toggle("open");
+// }
 function toggleMenu() {
-  const menu = document.querySelector(".menu-links");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
+  var element = document.querySelector('.menu-links');
+  if (element.classList.contains('visible')) {
+    element.classList.add('fade-out'); // Begin fade-out animation
+    setTimeout(() => {
+      element.classList.remove('visible', 'fade-out');
+      element.style.display = 'none'; // Hide the menu after animation completes
+    }, 500); // Match the timeout to the duration of the fade-out animation
+  } else {
+    element.style.display = 'flex'; // Set display to flex before adding 'visible' for animation to work
+    element.classList.add('visible');
+  }
 }
+
+document.querySelectorAll('.menu-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    var menu = document.querySelector('.menu-links');
+    menu.classList.add('fade-out');
+    setTimeout(() => {
+      menu.classList.remove('visible', 'fade-out');
+      menu.style.display = 'none';
+      document.querySelector('.menu').classList.remove('opened');
+      document.querySelector('.menu').setAttribute('aria-expanded', 'false');
+    }, 500); // Ensure this matches the duration of the fade-out animation
+  });
+});
 
 // Video starting when mouse is over ---------------------------------------------------
 
@@ -12,12 +38,12 @@ const videoContainers = document.querySelectorAll(".video-container");
 videoContainers.forEach(container => {
   const video = container.querySelector(".custom-video");
   video.currentTime = 0;
-  
-  video.addEventListener("mouseover", function() {
+
+  video.addEventListener("mouseover", function () {
     video.play();
   });
 
-  video.addEventListener("mouseout", function() {
+  video.addEventListener("mouseout", function () {
     video.pause();
     video.currentTime = 0;
   });
@@ -55,7 +81,7 @@ function openLinkInNewTab() {
 //   do {
 //     randomIndex = Math.floor(Math.random() * pastelColors.length);
 //   } while (randomIndex === previousIndex);
-  
+
 //   previousIndex = randomIndex;
 //   return `rgba(${pastelColors[randomIndex]}, ${alpha})`;
 // }
@@ -89,14 +115,14 @@ const scrollContainer = document.querySelector('.all-video-container');
 const dots = document.querySelectorAll('.dot');
 setActiveDot(0)
 
-scrollContainer.onscroll = function() {
+scrollContainer.onscroll = function () {
   // Get the vertical scroll position of the container
-  const scrollPosition = scrollContainer.scrollLeft;  
+  const scrollPosition = scrollContainer.scrollLeft;
   const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
   const dotNum = dots.length;
   var index = parseInt((scrollPosition - 1) / (maxScrollLeft / dotNum));
   setActiveDot(index);
-  
+
 };
 
 function setActiveDot(index) {
@@ -118,14 +144,14 @@ const scrolldetailContainer1 = document.querySelector('.details-containers-row1'
 const dotsAbout1 = document.querySelectorAll('.dot-about-1');
 setActiveDotAbout1(0)
 
-scrolldetailContainer1.onscroll = function() {
+scrolldetailContainer1.onscroll = function () {
   // Get the vertical scroll position of the container
-  const scrollPosition = scrolldetailContainer1.scrollLeft;  
+  const scrollPosition = scrolldetailContainer1.scrollLeft;
   const maxScrollLeft = scrolldetailContainer1.scrollWidth - scrolldetailContainer1.clientWidth;
   const dotNum = dotsAbout1.length;
   var index = parseInt((scrollPosition - 1) / (maxScrollLeft / dotNum));
   setActiveDotAbout1(index);
-  
+
 };
 
 function setActiveDotAbout1(index) {
@@ -146,14 +172,14 @@ const scrolldetailContainer2 = document.querySelector('.details-containers-row2'
 const dotsAbout2 = document.querySelectorAll('.dot-about-2');
 setActiveDotAbout2(0)
 
-scrolldetailContainer2.onscroll = function() {
+scrolldetailContainer2.onscroll = function () {
   // Get the vertical scroll position of the container
-  const scrollPosition = scrolldetailContainer2.scrollLeft;  
+  const scrollPosition = scrolldetailContainer2.scrollLeft;
   const maxScrollLeft = scrolldetailContainer2.scrollWidth - scrolldetailContainer2.clientWidth;
   const dotNum = dotsAbout2.length;
   var index = parseInt((scrollPosition - 1) / (maxScrollLeft / dotNum));
   setActiveDotAbout2(index);
-  
+
 };
 
 function setActiveDotAbout2(index) {
@@ -168,6 +194,6 @@ function setActiveDotAbout2(index) {
 
 // Project
 
-$('input').on('change', function() {
+$('input').on('change', function () {
   $('body').toggleClass('black');
 });

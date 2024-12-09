@@ -24,7 +24,7 @@
   </nav>
   <nav id="hamburger-nav">
     <button class="menu"
-      onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+      onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened')); toggleMenu();"
       aria-label="Main Menu">
       <svg width="50" height="50" viewBox="0 0 100 100">
         <path class="line line1"
@@ -34,16 +34,13 @@
           d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
       </svg>
     </button>
-    <!-- <label for="menu-toggle" class="hamburger-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    <div class="menu-links">
-      <li><a href="#about" onclick="toggleMenu()">About</a></li>
-      <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-    </div> -->
+    <div class="menu-links" style="display: none;">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
   <section id="profile">
     <div class="section__pic-container">
@@ -180,8 +177,8 @@
     <img src="./assets/icones/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
   </section>
   <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
     <div class="contact-info-upper-container" onclick="openLinkInNewTab()">
       <div class="contact-info-container">
         <img src="./assets/icones/networks/instagram.png" alt="instagram icon" class="icon contact-icon" />
