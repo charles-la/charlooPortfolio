@@ -11,7 +11,7 @@ function toggleMenu() {
     setTimeout(() => {
       element.classList.remove('visible', 'fade-out');
       element.style.display = 'none'; // Hide the menu after animation completes
-    }, 500); // Match the timeout to the duration of the fade-out animation
+    }, 650); // Match the timeout to the duration of the fade-out animation
   } else {
     element.style.display = 'flex'; // Set display to flex before adding 'visible' for animation to work
     element.classList.add('visible');
@@ -27,7 +27,7 @@ document.querySelectorAll('.menu-links a').forEach(link => {
       menu.style.display = 'none';
       document.querySelector('.menu').classList.remove('opened');
       document.querySelector('.menu').setAttribute('aria-expanded', 'false');
-    }, 500); // Ensure this matches the duration of the fade-out animation
+    }, 650); // Ensure this matches the duration of the fade-out animation
   });
 });
 

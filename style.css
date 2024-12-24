@@ -108,6 +108,7 @@ a:hover {
   background-color: white;
   z-index: 100;
   display: none;
+  text-align: center;
   justify-content: center;
   align-items: center;
   padding-top: 0px;
@@ -115,7 +116,7 @@ a:hover {
 }
 
 .menu-links.fade-out {
-  animation: fadeOut 0.5s ease-out forwards;
+  animation: fadeOut 0.65s ease-out forwards;
 }
 
 .menu-links ul {
@@ -222,10 +223,6 @@ section {
   min-height: fit-content;
 }
 
-.section-container {
-  display: flex;
-}
-
 /* Arrow */
 .arrow {
   position: absolute;
@@ -240,14 +237,12 @@ section {
 }
 
 /* PROFILE SECTION */
-
 #profile {
   /* filter: brightness(250%); */
   background-color: rgba(255, 255, 255, 0.8);
   background-blend-mode: lighten;
-  background-image: url('assets/photos/charloo.png');
-  background-size: 120%;
-  /* Scales both dimensions proportionally */
+  background-image: url('assets/photos/charloo.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   display: flex;
@@ -285,8 +280,8 @@ section {
 
 .section__pic-container {
   display: flex;
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
   margin: auto 0;
 }
 
@@ -392,24 +387,20 @@ section {
 
 #about {
   position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 .all-details-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Ensure center alignment */
   justify-content: center;
-  height: 50%;
-  /* Adjust based on actual content size */
-}
-
-.about-pic {
-  border-radius: 2rem;
 }
 
 .details-container {
   position: absolute;
+  margin: 0 auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) translateX(200px);
@@ -423,24 +414,10 @@ section {
   animation: display 30s infinite;
 }
 
-.section-container {
-  gap: 2rem;
-  height: 80%;
-}
-
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
-
 .text-ctn {
-  position: relative;
-  width: 60%;
+  width: 100%;
   height: 60vh;
-  /* Adjust height as needed to fit content */
   overflow: hidden;
-  /* Hide elements sliding in and out */
 }
 
 @keyframes display {
@@ -507,6 +484,8 @@ section {
 
 #projects {
   position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 .title-container {
@@ -520,7 +499,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 }
 
 input[type=radio] {
@@ -530,11 +508,8 @@ input[type=radio] {
 .card {
   position: absolute;
   width: 100%;
-  /* The width of the card */
   padding-top: 100%;
-  /* This creates a square aspect ratio */
   height: auto;
-  /* Height is controlled by padding-top */
   left: auto;
   right: 0;
   margin: auto;
