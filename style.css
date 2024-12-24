@@ -252,7 +252,7 @@ section {
 }
 
 #projects {
-  background-color: rgba(77, 77, 77, 0.8);
+  background-color: rgba(135, 135, 135, 0.8);
   background-blend-mode: lighten;
   background-image: url('assets/photos/darkbike2.jpg');
   background-size: cover;
@@ -533,7 +533,7 @@ input[type=radio] {
 .cards {
   position: relative;
   width: 50%;
-  max-width: 350px;
+  max-width: 300px;
   margin-bottom: 5px;
   transform-style: preserve-3d;
 }
@@ -549,7 +549,7 @@ input[type=radio] {
   border-radius: 8px;
   min-width: 220px;
   padding: 16px 10px;
-  top: 365px;
+  top: 345px;
 }
 
 #item-1:checked~.cards #song-3,
