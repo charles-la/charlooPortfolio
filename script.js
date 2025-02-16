@@ -197,3 +197,18 @@ function setActiveDotAbout2(index) {
 $('input').on('change', function () {
   $('body').toggleClass('black');
 });
+
+
+// Music Listner
+function togglePlay() {
+  var audio = document.getElementById('audioPlayer');
+  var button = document.getElementById('playPauseBtn');
+  if (audio.paused) {
+    audio.play();
+    button.style.backgroundImage = "url('assets/icones/stop.png')"; // Change to stop icon
+  } else {
+    audio.pause();
+    audio.currentTime = 0;
+    button.style.backgroundImage = "url('assets/icones/play.png')"; // Change back to play icon
+  }
+}

@@ -41,7 +41,7 @@ nav {
 }
 
 .nav-links {
-  gap: 2rem;
+  gap: 3.5rem;
   list-style: none;
   font-size: 1.5rem;
 }
@@ -53,10 +53,11 @@ a {
 }
 
 a:hover {
-  color: grey;
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  /* color: grey; */
+  color: rgb(121, 92, 226);
+  text-decoration-color: rgb(121, 92, 226, 0.6);
 }
 
 .logo {
@@ -73,6 +74,7 @@ a:hover {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -82,6 +84,7 @@ a:hover {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
@@ -89,14 +92,16 @@ a:hover {
 
 #hamburger-nav {
   position: relative;
-  z-index: 200; /* Higher than the overlay */
+  z-index: 200;
+  /* Higher than the overlay */
 }
 
 .menu {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 201;        /* Explicitly high to ensure visibility */
+  z-index: 201;
+  /* Explicitly high to ensure visibility */
 }
 
 .menu-links {
@@ -112,7 +117,8 @@ a:hover {
   justify-content: center;
   align-items: center;
   padding-top: 0px;
-  animation: fadeIn 0.5s ease-out forwards; /* Apply the animation */
+  animation: fadeIn 0.5s ease-out forwards;
+  /* Apply the animation */
 }
 
 .menu-links.fade-out {
@@ -134,7 +140,7 @@ a:hover {
   color: black;
   font-weight: bold;
 }
- 
+
 #hamburger-nav {
   display: none;
 }
@@ -226,8 +232,8 @@ section {
 /* Arrow */
 .arrow {
   position: absolute;
-  right: 1rem;
-  bottom: 2.5rem;
+  right: 2rem;
+  bottom: 1.6rem;
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -283,6 +289,8 @@ section {
   height: 400px;
   width: 400px;
   margin: auto 0;
+  /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+  /* border-radius: 25px; */
 }
 
 .section__text {
@@ -314,7 +322,7 @@ section {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-  gap: 1rem;
+  gap: 1.3rem;
 }
 
 /* ICONS */
@@ -422,15 +430,20 @@ section {
 
 @keyframes display {
 
-  0%, 35% {
+  0%,
+  35% {
     transform: translate(-50%, -50%) translateX(200px);
     opacity: 0;
   }
-  10%, 15% {
+
+  10%,
+  15% {
     transform: translate(-50%, -50%) translateX(0);
     opacity: 1;
   }
-  20%, 100% {
+
+  20%,
+  100% {
     transform: translate(-50%, -50%) translateX(200px);
     opacity: 0;
   }
@@ -538,7 +551,7 @@ input[type=radio] {
   transform-style: preserve-3d;
 }
 
-.player {
+/* .player {
   position: relative;
   background-blend-mode: lighten;
   background-image: url('assets/photos/darkbike2.jpg');
@@ -550,7 +563,7 @@ input[type=radio] {
   min-width: 220px;
   padding: 16px 10px;
   top: 345px;
-}
+} */
 
 #item-1:checked~.cards #song-3,
 #item-2:checked~.cards #song-1,
@@ -621,12 +634,12 @@ input[type=radio] {
   margin-left: auto;
 }
 
-.progress-bar {
+/* .progress-bar {
   height: 3px;
   width: 100%;
   background-color: #5d5d5d;
   overflow: hidden;
-}
+} */
 
 .progress {
   display: block;
@@ -645,7 +658,7 @@ input[type=radio] {
   transition: transform .4s ease-in;
 }
 
-#item-1:checked~.player #test {
+/* #item-1:checked~.player #test {
   transform: translateY(0);
 }
 
@@ -655,7 +668,7 @@ input[type=radio] {
 
 #item-3:checked~.player #test {
   transform: translateY(-80px);
-}
+} */
 
 /* CONTACT */
 
@@ -663,26 +676,32 @@ input[type=radio] {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  height: 80vh;
 }
 
 .contact-info-upper-container {
   display: flex;
   justify-content: center;
   border-radius: 1rem;
-  /* border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(65, 65, 65); */
-  background: rgba(237, 237, 237, 0.7);
-  margin: 2rem auto;
-  padding: 0.5rem;
+  border: rgba(209, 209, 209, 0) 0.15rem solid;
+  /* background: rgba(209, 209, 209, 0.7); */
+  background: rgb(161, 140, 235);
+  margin: 1rem auto;
+  padding: 0.2rem;
   cursor: pointer;
-  transition: transform 0.5s;
   z-index: 2;
 }
 
 .contact-info-upper-container:hover {
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.0);
+  border: #000000 0.15rem solid;
+  text-decoration: none;
 }
+
+.contact-info-upper-container img {
+  filter:brightness(100%);
+}
+
 
 .contact-info-container {
   display: flex;
@@ -712,10 +731,58 @@ input[type=radio] {
 /* FOOTER SECTION */
 
 footer {
-  height: 26vh;
+  height: 17vh;
   margin: 0 1rem;
 }
 
 footer p {
   text-align: center;
 }
+
+footer nav {
+  height: 5rem;
+}
+
+/* Play */
+#playPauseBtn {
+  width: 40px; /* Set the width of the button */
+  height: 40px; /* Set the height of the button */
+  background-image: url('assets/icones/play.png');
+  background-size: cover;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255, 0);
+  cursor: pointer;
+  outline: none;
+  border-width: 0 50px 30px 50px;
+  filter: grayscale(100%);
+}
+
+.container-audio-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(242, 242, 242, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#cover {
+  width: 140px;
+  height: 140px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* #playPauseBtn {
+  border-style: solid;
+  border-width: 0 50px 30px 50px;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  top: 35%;
+  left: 25%;
+} */
