@@ -289,8 +289,6 @@ section {
   height: 400px;
   width: 400px;
   margin: auto 0;
-  /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
-  /* border-radius: 25px; */
 }
 
 .section__text {
@@ -416,7 +414,8 @@ section {
   text-align: center;
   opacity: 0;
   padding: 1rem;
-  background: rgba(21, 21, 21, 0.2);
+  /* background: rgba(21, 21, 21, 0.2); */
+  background: rgb(161, 140, 235, 0.7);
   border-radius: 1rem;
   text-align: center;
   animation: display 30s infinite;
