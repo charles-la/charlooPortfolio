@@ -56,8 +56,8 @@ a:hover {
   text-decoration: underline;
   text-underline-offset: 1rem;
   /* color: grey; */
-  color: rgb(121, 92, 226);
-  text-decoration-color: rgb(121, 92, 226, 0.6);
+  color: #778DA9;
+  text-decoration-color: #778DA9;
 }
 
 .logo {
@@ -415,10 +415,11 @@ section {
   opacity: 0;
   padding: 1rem;
   /* background: rgba(21, 21, 21, 0.2); */
-  background: rgb(161, 140, 235, 0.7);
+  background: #E0E1DD;
   border-radius: 1rem;
   text-align: center;
   animation: display 30s infinite;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .text-ctn {
@@ -684,11 +685,12 @@ input[type=radio] {
   border-radius: 1rem;
   border: rgba(209, 209, 209, 0) 0.15rem solid;
   /* background: rgba(209, 209, 209, 0.7); */
-  background: rgb(161, 140, 235);
+  background: #778DA9;
   margin: 1rem auto;
   padding: 0.2rem;
   cursor: pointer;
   z-index: 2;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .contact-info-upper-container:hover {
@@ -761,7 +763,7 @@ footer nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #a18ceb;
+  background-color: #778DA9;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
