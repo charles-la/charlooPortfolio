@@ -47,7 +47,7 @@
       <img src="./assets/photos/charloo_round.png" alt="Charles Langlois profile picture" />
     </div>
     <div class="section__text">
-      <h1 class="title" style="color:#000000">Charloo</h1>
+      <h1 class="title">Charloo</h1>
       <p class="section__text__p2" style="color: #415A77">Music Producer</p>
       <div id="socials-container">
         <a href='https://open.spotify.com/artist/5tu0ILyIfyD6UbvQTTDy7C?si=8m1AErmNQ0u3cRcCiBTNXw' target="_blank">
@@ -72,12 +72,18 @@
     </div>
     <div class="container-project">
       <div class="container-audio-player">
-        <img id="cover" src="assets/cover/album_cover.PNG">
+        <img id="cover" src="assets/cover/cover_sample20.jpeg">
+        <!-- <div class="cover-carousel">
+          <img id="cover" src="assets/cover/album_cover.PNG">
+        </div> -->
         <audio id="audioPlayer" src="assets/audio/sample20.wav"></audio>
         <p>Sample 20</p>
-        <button id="playPauseBtn" onclick="togglePlay()"></button>
+        <div class="audio-controls">
+          <button id="prevBtn" onclick="prevTrack()"></button>
+          <button id="playPauseBtn" onclick="togglePlay()"></button>
+          <button id="nextBtn" onclick="nextTrack()"></button>
+        </div>
       </div>
-    </div>
     </div>
     <div>
       <img src="./assets/icones/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#about'" />

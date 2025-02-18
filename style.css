@@ -419,7 +419,7 @@ section {
   border-radius: 1rem;
   text-align: center;
   animation: display 30s infinite;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .text-ctn {
@@ -690,7 +690,7 @@ input[type=radio] {
   padding: 0.2rem;
   cursor: pointer;
   z-index: 2;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info-upper-container:hover {
@@ -700,7 +700,7 @@ input[type=radio] {
 }
 
 .contact-info-upper-container img {
-  filter:brightness(100%);
+  filter: brightness(100%);
 }
 
 
@@ -745,15 +745,66 @@ footer nav {
 }
 
 /* Play */
+.audio-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  /* Adjust the gap between buttons as needed */
+}
+
 #playPauseBtn {
-  width: 40px; /* Set the width of the button */
-  height: 40px; /* Set the height of the button */
+  width: 40px;
+  /* Set the width of the button */
+  height: 40px;
+  /* Set the height of the button */
   background-image: url('assets/icones/play.png');
   background-size: cover;
   margin-top: 10px;
   border: none;
   border-radius: 5px;
   background-color: rgb(255, 255, 255, 0);
+  transition: transform 0.3s;
+  cursor: pointer;
+  outline: none;
+  border-width: 0 50px 30px 50px;
+}
+
+#playPauseBtn:hover,
+#prevBtn:hover,
+#nextBtn:hover {
+  transform: scale(1.25);
+}
+
+#prevBtn {
+  width: 25px;
+  /* Set the width of the button */
+  height: 25px;
+  /* Set the height of the button */
+  background-image: url('assets/icones/previous.png');
+  background-size: cover;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255, 0);
+  transition: transform 0.3s;
+  cursor: pointer;
+  outline: none;
+  border-width: 0 50px 30px 50px;
+}
+
+#nextBtn {
+  width: 25px;
+  /* Set the width of the button */
+  height: 25px;
+  /* Set the height of the button */
+  background-image: url('assets/icones/next.png');
+  background-size: cover;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255, 0);
+  transition: transform 0.3s;
   cursor: pointer;
   outline: none;
   border-width: 0 50px 30px 50px;
@@ -766,7 +817,7 @@ footer nav {
   background-color: #778DA9;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #cover {
@@ -776,6 +827,22 @@ footer nav {
   margin-bottom: 20px;
   background-size: cover;
   background-position: center;
+}
+
+.cover-carousel {
+  position: relative;
+  margin-bottom: 20px;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.cover-carousel img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
 }
 
 /* #playPauseBtn {

@@ -212,3 +212,27 @@ function togglePlay() {
     button.style.backgroundImage = "url('assets/icones/play.png')"; // Change back to play icon
   }
 }
+
+// Add event listener for when the audio ends
+// document.getElementById('audioPlayer').addEventListener('ended', function () {
+//   var button = document.getElementById('playPauseBtn');
+//   button.style.backgroundImage = "url('assets/icones/play.png')"; // Change back to play icon
+// });
+
+// let currentCoverIndex = 0;
+// const covers = document.querySelectorAll('.cover-carousel .cover');
+
+// function nextTrack() {
+//   currentCoverIndex = (currentCoverIndex + 1) % covers.length;
+//   updateCover();
+// }
+
+// function prevTrack() {
+//   currentCoverIndex = (currentCoverIndex - 1 + covers.length) % covers.length;
+//   updateCover();
+// }
+
+// function updateCover() {
+//   const carousel = document.querySelector('.cover-carousel');
+//   carousel.style.transform = `translateX(-${currentCoverIndex * 220}px)`;
+// }
