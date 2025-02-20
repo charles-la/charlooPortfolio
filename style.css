@@ -726,7 +726,13 @@ input[type=radio] {
 }
 
 .IG {
-  color: rgb(0, 0, 0)
+  color: rgb(0, 0, 0);
+}
+
+#mail-icon {
+  margin-left: 0.25rem;
+  width: 26px;
+  height: 26px;
 }
 
 /* FOOTER SECTION */
