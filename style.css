@@ -768,15 +768,18 @@ footer nav {
   border: none;
   border-radius: 5px;
   background-color: rgb(255, 255, 255, 0);
-  transition: transform 0.3s;
   cursor: pointer;
   outline: none;
   border-width: 0 50px 30px 50px;
+  transition: transform 0.3s ease;
 }
 
 #playPauseBtn:hover,
+#playPauseBtn:active,
 #prevBtn:hover,
-#nextBtn:hover {
+#prevBtn:active,
+#nextBtn:hover,
+#nextBtn:active {
   transform: scale(1.25);
 }
 
