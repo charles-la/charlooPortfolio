@@ -730,7 +730,7 @@ input[type=radio] {
 }
 
 #mail-icon {
-  margin-left: 0.25rem;
+  margin-left: 0.05rem;
   width: 26px;
   height: 26px;
 }
@@ -750,20 +750,18 @@ footer nav {
   height: 5rem;
 }
 
-/* Play */
+
+/* Sample Audio */
 .audio-controls {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  /* Adjust the gap between buttons as needed */
 }
 
 #playPauseBtn {
   width: 40px;
-  /* Set the width of the button */
   height: 40px;
-  /* Set the height of the button */
   background-image: url('assets/icones/play.png');
   background-size: cover;
   margin-top: 10px;
@@ -826,7 +824,7 @@ footer nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#cover {
+#cover1 {
   width: 220px;
   height: 220px;
   border-radius: 8px;
@@ -842,13 +840,30 @@ footer nav {
   height: 220px;
   overflow: hidden;
   display: flex;
-  transition: transform 0.5s ease-in-out;
 }
 
 .cover-carousel img {
   width: 220px;
   height: 220px;
   object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.cover-carousel img.slide-out-left {
+  transform: translateX(-100%);
+}
+
+.cover-carousel img.slide-in-right {
+  transform: translateX(100%);
+}
+
+.cover-carousel img.slide-in {
+  transform: translateX(0);
+}
+
+.opacity-transition {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
 }
 
 /* #playPauseBtn {

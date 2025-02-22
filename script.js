@@ -1,9 +1,4 @@
-// function toggleMenu() {
-//   const menu = document.querySelector(".menu-links");
-//   const icon = document.querySelector(".hamburger-icon");
-//   menu.classList.toggle("open");
-//   icon.classList.toggle("open");
-// }
+// Mobile menu ------------------------------------------------------------------------
 function toggleMenu() {
   var element = document.querySelector('.menu-links');
   if (element.classList.contains('visible')) {
@@ -31,26 +26,8 @@ document.querySelectorAll('.menu-links a').forEach(link => {
   });
 });
 
-// Video starting when mouse is over ---------------------------------------------------
 
-const videoContainers = document.querySelectorAll(".video-container");
-
-videoContainers.forEach(container => {
-  const video = container.querySelector(".custom-video");
-  video.currentTime = 0;
-
-  video.addEventListener("mouseover", function () {
-    video.play();
-  });
-
-  video.addEventListener("mouseout", function () {
-    video.pause();
-    video.currentTime = 0;
-  });
-});
-
-// Open a new URL ----------------------------------------------------------------------
-
+// Contact Button Link ----------------------------------------------------------------
 function openLinkInNewTab() {
   // Replace the URL with the link you want to open in a new tab
   const linkURL = "https://www.instagram.com/charloo._/";
@@ -59,180 +36,98 @@ function openLinkInNewTab() {
   window.open(linkURL, "_blank");
 }
 
-// Over contact Color changing ---------------------------------------------------------
 
-// let previousIndex = null;
+// Music Listner ----------------------------------------------------------------
+const COVERS = [
+  { src: 'assets/cover/cover_sample20.jpeg', audio: 'assets/audio/sample20.wav', title: 'Sample 20' },
+  { src: 'assets/cover/cover1.jpeg', audio: 'assets/audio/sample20.wav', title: 'Coming soon ...' }
+];
+let covers = [...COVERS];
+let currentIndex = 0;
+let isTransitioning = false;
+let debounceTimeout;
 
-// function getRandomPastelColor(alpha) {
-//   const pastelColors = [
-//       '255, 182, 193',  // LightPink
-//       '135, 206, 235',  // SkyBlue
-//       '152, 251, 152',  // PaleGreen
-//       '255, 160, 122',  // LightSalmon
-//       '255, 215, 0',    // Gold
-//       '173, 216, 230',  // LightBlue
-//       '255, 105, 180',  // HotPink
-//       '216, 191, 216',  // Thistle
-//       '152, 251, 152',  // PaleGreen repeated
-//       '135, 206, 250'   // LightSkyBlue
-//   ];
+function updatePlayer() {
+  if (isTransitioning) return;
+  // Ensure currentIndex stays within bounds
+  if (currentIndex >= covers.length) {
+    currentIndex = 0;
+  } else if (currentIndex < 0) {
+    currentIndex = covers.length - 1;
+  }
 
-//   let randomIndex;
-//   do {
-//     randomIndex = Math.floor(Math.random() * pastelColors.length);
-//   } while (randomIndex === previousIndex);
+  const cover = document.getElementById('cover1');
+  const audio = document.getElementById('audioPlayer');
+  const title = document.getElementById('sampleTitle');
 
-//   previousIndex = randomIndex;
-//   return `rgba(${pastelColors[randomIndex]}, ${alpha})`;
-// }
+  if (!cover || !audio || !title) {
+    console.error('One or more elements not found:', { cover, audio, title });
+    return;
+  }
 
-// function changeColorPeriodically() {
-//   const element = document.querySelector('.contact-info-upper-container');
+  isTransitioning = true;
 
-//   // Initialize with a color right after the page loads
-//   const initialColor = getRandomPastelColor(0.6);
-//   element.style.borderColor = initialColor;
-//   element.style.background = initialColor;
+  // Add slide-out-left class
+  cover.classList.add('slide-out-left');
+  title.classList.add('opacity-transition');
 
-//   setInterval(function () {
-//     const color = getRandomPastelColor(0.6);
-//     element.style.borderColor = color;
-//     element.style.background = color;
-//   }, 500); // Change the color every 500 milliseconds
-// }
+  // Listen for the end of the slide-out transition
+  cover.addEventListener('transitionend', function handleSlideOut() {
+    // Update the source and text content
+    cover.src = covers[currentIndex].src;
+    audio.src = covers[currentIndex].audio;
+    title.textContent = covers[currentIndex].title;
 
-// // Change the color periodically after the page loads
-// window.addEventListener('load', changeColorPeriodically);
+    // Remove slide-out-left class and add slide-in-left class
+    cover.classList.remove('slide-out-left');
+    cover.classList.add('slide-in-left');
 
+    // Force reflow to restart the animation
+    void cover.offsetWidth;
 
-// Project Section
-// -----------------------------------------------------------------------------------//
+    // Add slide-in class to move the image into view
+    cover.classList.add('slide-in');
 
-// Dot
-document.querySelector('.all-video-container').scrollLeft = 0;
+    // Remove slide-in-left and slide-in classes after the transition completes
+    cover.addEventListener('transitionend', function handleSlideIn() {
+      cover.classList.remove('slide-in-left', 'slide-in');
+      isTransitioning = false;
+      cover.removeEventListener('transitionend', handleSlideIn);
+    });
+    // Remove the event listener to avoid multiple triggers
+    cover.removeEventListener('transitionend', handleSlideOut);
 
-const scrollContainer = document.querySelector('.all-video-container');
-const dots = document.querySelectorAll('.dot');
-setActiveDot(0)
-
-scrollContainer.onscroll = function () {
-  // Get the vertical scroll position of the container
-  const scrollPosition = scrollContainer.scrollLeft;
-  const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-  const dotNum = dots.length;
-  var index = parseInt((scrollPosition - 1) / (maxScrollLeft / dotNum));
-  setActiveDot(index);
-
-};
-
-function setActiveDot(index) {
-  dots.forEach((dot, dotIndex) => {
-    if (index === dotIndex) {
-      dot.classList.add('active');
-    } else {
-      dot.classList.remove('active');
-    }
+    // Remove opacity-transition class after the transition completes
+    title.classList.remove('opacity-transition');
   });
 }
 
-// About
-// Scroll dot about row 1
-
-document.querySelector('.details-containers-row1').scrollLeft = 0;
-
-const scrolldetailContainer1 = document.querySelector('.details-containers-row1');
-const dotsAbout1 = document.querySelectorAll('.dot-about-1');
-setActiveDotAbout1(0)
-
-scrolldetailContainer1.onscroll = function () {
-  // Get the vertical scroll position of the container
-  const scrollPosition = scrolldetailContainer1.scrollLeft;
-  const maxScrollLeft = scrolldetailContainer1.scrollWidth - scrolldetailContainer1.clientWidth;
-  const dotNum = dotsAbout1.length;
-  var index = parseInt((scrollPosition - 1) / (maxScrollLeft / dotNum));
-  setActiveDotAbout1(index);
-
-};
-
-function setActiveDotAbout1(index) {
-  dotsAbout1.forEach((dot, dotIndex) => {
-    if (index === dotIndex) {
-      dot.classList.add('active');
-    } else {
-      dot.classList.remove('active');
-    }
-  });
+// Debounce function to prevent multiple rapid calls
+function debounceUpdatePlayer() {
+  clearTimeout(debounceTimeout);
+  debounceTimeout = setTimeout(updatePlayer, 200); // Adjust the debounce delay as needed
 }
 
-// Scroll dot about row 2
-
-document.querySelector('.details-containers-row2').scrollLeft = 0;
-
-const scrolldetailContainer2 = document.querySelector('.details-containers-row2');
-const dotsAbout2 = document.querySelectorAll('.dot-about-2');
-setActiveDotAbout2(0)
-
-scrolldetailContainer2.onscroll = function () {
-  // Get the vertical scroll position of the container
-  const scrollPosition = scrolldetailContainer2.scrollLeft;
-  const maxScrollLeft = scrolldetailContainer2.scrollWidth - scrolldetailContainer2.clientWidth;
-  const dotNum = dotsAbout2.length;
-  var index = parseInt((scrollPosition - 1) / (maxScrollLeft / dotNum));
-  setActiveDotAbout2(index);
-
-};
-
-function setActiveDotAbout2(index) {
-  dotsAbout2.forEach((dot, dotIndex) => {
-    if (index === dotIndex) {
-      dot.classList.add('active');
-    } else {
-      dot.classList.remove('active');
-    }
-  });
+function nextTrack() {
+  currentIndex++;
+  debounceUpdatePlayer();
 }
 
-// Project
+function prevTrack() {
+  currentIndex--;
+  debounceUpdatePlayer();
+}
 
-$('input').on('change', function () {
-  $('body').toggleClass('black');
-});
-
-
-// Music Listner
 function togglePlay() {
   var audio = document.getElementById('audioPlayer');
   var button = document.getElementById('playPauseBtn');
   if (audio.paused) {
     audio.play();
-    button.style.backgroundImage = "url('assets/icones/stop.png')"; // Change to stop icon
+    button.style.backgroundImage = "url('assets/icones/stop.png')";
   } else {
     audio.pause();
     audio.currentTime = 0;
-    button.style.backgroundImage = "url('assets/icones/play.png')"; // Change back to play icon
+    button.style.backgroundImage = "url('assets/icones/play.png')";
   }
 }
 
-// Add event listener for when the audio ends
-// document.getElementById('audioPlayer').addEventListener('ended', function () {
-//   var button = document.getElementById('playPauseBtn');
-//   button.style.backgroundImage = "url('assets/icones/play.png')"; // Change back to play icon
-// });
-
-// let currentCoverIndex = 0;
-// const covers = document.querySelectorAll('.cover-carousel .cover');
-
-// function nextTrack() {
-//   currentCoverIndex = (currentCoverIndex + 1) % covers.length;
-//   updateCover();
-// }
-
-// function prevTrack() {
-//   currentCoverIndex = (currentCoverIndex - 1 + covers.length) % covers.length;
-//   updateCover();
-// }
-
-// function updateCover() {
-//   const carousel = document.querySelector('.cover-carousel');
-//   carousel.style.transform = `translateX(-${currentCoverIndex * 220}px)`;
-// }
