@@ -40,12 +40,15 @@ function openLinkInNewTab() {
 // Music Listner ----------------------------------------------------------------
 const COVERS = [
   { src: 'assets/cover/cover_sample20.jpeg', audio: 'assets/audio/sample20.wav', title: 'Sample 20' },
-  { src: 'assets/cover/cover1.jpeg', audio: 'assets/audio/sample20.wav', title: 'Coming soon ...' }
+  { src: 'assets/cover/cover1.jpeg', audio: 'assets/audio/sample20.wav', title: 'Sample 21' },
+  { src: 'assets/cover/cover_empty.PNG', audio: 'assets/audio/sample20.wav', title: 'Coming soon ...' }
 ];
+
 let covers = [...COVERS];
 let currentIndex = 0;
 let isTransitioning = false;
 let debounceTimeout;
+let direction = 'right';
 
 function updatePlayer() {
   if (isTransitioning) return;
@@ -67,20 +70,29 @@ function updatePlayer() {
 
   isTransitioning = true;
 
-  // Add slide-out-left class
-  cover.classList.add('slide-out-left');
+  // Add slide-out class based on direction
+  cover.classList.add(direction === 'left' ? 'slide-out-left' : 'slide-out-right');
   title.classList.add('opacity-transition');
 
   // Listen for the end of the slide-out transition
   cover.addEventListener('transitionend', function handleSlideOut() {
+    // Remove slide-out class
+    cover.classList.remove(direction === 'left' ? 'slide-out-left' : 'slide-out-right');
+
+    // Move the image off-screen to the opposite side
+    cover.classList.add(direction === 'left' ? 'off-screen-right' : 'off-screen-left');
+
+    // Force reflow to apply the off-screen position
+    void cover.offsetWidth;
+
     // Update the source and text content
     cover.src = covers[currentIndex].src;
     audio.src = covers[currentIndex].audio;
     title.textContent = covers[currentIndex].title;
 
-    // Remove slide-out-left class and add slide-in-left class
-    cover.classList.remove('slide-out-left');
-    cover.classList.add('slide-in-left');
+    // Add slide-in class based on the opposite direction
+    cover.classList.remove(direction === 'left' ? 'off-screen-right' : 'off-screen-left');
+    cover.classList.add(direction === 'left' ? 'slide-in-right' : 'slide-in-left');
 
     // Force reflow to restart the animation
     void cover.offsetWidth;
@@ -88,19 +100,20 @@ function updatePlayer() {
     // Add slide-in class to move the image into view
     cover.classList.add('slide-in');
 
-    // Remove slide-in-left and slide-in classes after the transition completes
+    // Remove slide-in classes after the transition completes
     cover.addEventListener('transitionend', function handleSlideIn() {
-      cover.classList.remove('slide-in-left', 'slide-in');
+      cover.classList.remove('slide-in-left', 'slide-in-right', 'slide-in');
       isTransitioning = false;
       cover.removeEventListener('transitionend', handleSlideIn);
-    });
+    }, { once: true });
     // Remove the event listener to avoid multiple triggers
     cover.removeEventListener('transitionend', handleSlideOut);
 
     // Remove opacity-transition class after the transition completes
     title.classList.remove('opacity-transition');
-  });
+  }, { once: true });
 }
+
 
 // Debounce function to prevent multiple rapid calls
 function debounceUpdatePlayer() {
@@ -109,11 +122,13 @@ function debounceUpdatePlayer() {
 }
 
 function nextTrack() {
+  direction = 'right';
   currentIndex++;
   debounceUpdatePlayer();
 }
 
 function prevTrack() {
+  direction = 'left';
   currentIndex--;
   debounceUpdatePlayer();
 }

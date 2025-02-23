@@ -2,6 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+
 * {
   margin: 0;
   padding: 0;
@@ -238,8 +239,10 @@ section {
   transition: transform 0.3s;
 }
 
-.arrow:hover {
-  transform: scale(1.25);
+@media (hover: hover) and (pointer: fine) {
+  .arrow:hover {
+    transform: scale(1.25);
+  }
 }
 
 /* PROFILE SECTION */
@@ -337,56 +340,10 @@ section {
   margin-right: 1.5px;
 }
 
-.icon-network:hover {
-  transform: scale(1.25);
-}
-
-/* BUTTONS */
-
-.btn-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.btn {
-  font-weight: 600;
-  transition: all 300ms ease;
-  padding: 1rem;
-  width: 8rem;
-  border-radius: 2rem;
-}
-
-.btn-color-1,
-.btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
-}
-
-.btn-color-1:hover,
-.btn-color-2:hover {
-  cursor: pointer;
-}
-
-.btn-color-1,
-.btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
-}
-
-.btn-color-1:hover {
-  background: rgb(0, 0, 0);
-}
-
-.btn-color-2 {
-  background: none;
-}
-
-.btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
-}
-
-.btn-container {
-  gap: 1rem;
+@media (hover: hover) and (pointer: fine) {
+  .icon-network:hover {
+    transform: scale(1.25);
+  }
 }
 
 /* ABOUT SECTION */
@@ -774,13 +731,14 @@ footer nav {
   transition: transform 0.3s ease;
 }
 
-#playPauseBtn:hover,
-#playPauseBtn:active,
-#prevBtn:hover,
-#prevBtn:active,
-#nextBtn:hover,
-#nextBtn:active {
-  transform: scale(1.25);
+@media (hover: hover) and (pointer: fine) {
+
+  #playPauseBtn:hover,
+  #prevBtn:hover,
+  #nextBtn:hover {
+    transform: scale(1.25);
+  }
+
 }
 
 #prevBtn {
@@ -848,7 +806,7 @@ footer nav {
 .cover-carousel img {
   width: 220px;
   height: 220px;
-  object-fit: cover;
+  /* object-fit: cover; */
   transition: transform 0.5s ease-in-out;
 }
 
@@ -856,24 +814,86 @@ footer nav {
   transform: translateX(-100%);
 }
 
-.cover-carousel img.slide-in-right {
+.cover-carousel img.slide-out-right {
   transform: translateX(100%);
+}
+
+.cover-carousel img.off-screen-left {
+  transform: translateX(-100%);
+}
+
+.cover-carousel img.off-screen-right {
+  transform: translateX(100%);
+}
+
+.cover-carousel img.slide-in-left {
+  transform: translateX(0);
+}
+
+.cover-carousel img.slide-in-right {
+  transform: translateX(0);
 }
 
 .cover-carousel img.slide-in {
   transform: translateX(0);
 }
 
+#sampleTitle {
+  transition: opacity 0.8s ease-out;
+}
+
 .opacity-transition {
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
   opacity: 0;
 }
 
-/* #playPauseBtn {
-  border-style: solid;
-  border-width: 0 50px 30px 50px;
-  border-color: transparent transparent #fff transparent;
-  position: absolute;
-  top: 35%;
-  left: 25%;
+
+
+
+/* BUTTONS */
+/* 
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 8rem;
+  border-radius: 2rem;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+  background: rgb(53, 53, 53);
+  color: white;
+}
+
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+  background: none;
+}
+
+.btn-color-2:hover {
+  border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container {
+  gap: 1rem;
 } */
