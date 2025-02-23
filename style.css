@@ -794,6 +794,16 @@ footer nav {
   background-position: center;
 }
 
+#cover1, #sampleTitle {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  will-change: opacity;
+}
+
+.fade-out {
+  opacity: 0 !important;
+}
+
 .cover-carousel {
   position: relative;
   margin-bottom: 20px;
@@ -806,46 +816,13 @@ footer nav {
 .cover-carousel img {
   width: 220px;
   height: 220px;
-  /* object-fit: cover; */
-  transition: transform 0.5s ease-in-out;
+  transition: opacity 0.3s ease;
 }
 
-.cover-carousel img.slide-out-left {
-  transform: translateX(-100%);
+.fade-out {
+  opacity: 0 !important;
 }
 
-.cover-carousel img.slide-out-right {
-  transform: translateX(100%);
-}
-
-.cover-carousel img.off-screen-left {
-  transform: translateX(-100%);
-}
-
-.cover-carousel img.off-screen-right {
-  transform: translateX(100%);
-}
-
-.cover-carousel img.slide-in-left {
-  transform: translateX(0);
-}
-
-.cover-carousel img.slide-in-right {
-  transform: translateX(0);
-}
-
-.cover-carousel img.slide-in {
-  transform: translateX(0);
-}
-
-#sampleTitle {
-  transition: opacity 0.8s ease-out;
-}
-
-.opacity-transition {
-  transition: opacity 0.8s ease-in-out;
-  opacity: 0;
-}
 
 
 

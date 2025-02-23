@@ -40,8 +40,8 @@ function openLinkInNewTab() {
 // Music Listner ----------------------------------------------------------------
 const COVERS = [
   { src: 'assets/cover/cover_sample20.jpeg', audio: 'assets/audio/sample20.wav', title: 'Sample 20' },
-  { src: 'assets/cover/cover1.jpeg', audio: 'assets/audio/sample20.wav', title: 'Sample 21' },
-  { src: 'assets/cover/cover_empty.PNG', audio: 'assets/audio/sample20.wav', title: 'Coming soon ...' }
+  { src: 'assets/cover/cover_sample26.jpeg', audio: 'assets/audio/sample26.wav', title: 'Sample 26' },
+  { src: 'assets/cover/cover_ocean.jpeg', audio: 'assets/audio/Ocean.wav', title: 'Ocean' }
 ];
 
 let covers = [...COVERS];
@@ -52,12 +52,7 @@ let direction = 'right';
 
 function updatePlayer() {
   if (isTransitioning) return;
-  // Ensure currentIndex stays within bounds
-  if (currentIndex >= covers.length) {
-    currentIndex = 0;
-  } else if (currentIndex < 0) {
-    currentIndex = covers.length - 1;
-  }
+  isTransitioning = true;
 
   const cover = document.getElementById('cover1');
   const audio = document.getElementById('audioPlayer');
@@ -68,69 +63,67 @@ function updatePlayer() {
     return;
   }
 
-  isTransitioning = true;
+  // Start fade out
+  cover.style.opacity = 0;
+  title.style.opacity = 0;
 
-  // Add slide-out class based on direction
-  cover.classList.add(direction === 'left' ? 'slide-out-left' : 'slide-out-right');
-  title.classList.add('opacity-transition');
-
-  // Listen for the end of the slide-out transition
-  cover.addEventListener('transitionend', function handleSlideOut() {
-    // Remove slide-out class
-    cover.classList.remove(direction === 'left' ? 'slide-out-left' : 'slide-out-right');
-
-    // Move the image off-screen to the opposite side
-    cover.classList.add(direction === 'left' ? 'off-screen-right' : 'off-screen-left');
-
-    // Force reflow to apply the off-screen position
-    void cover.offsetWidth;
-
-    // Update the source and text content
-    cover.src = covers[currentIndex].src;
+  // Wait for fade out to finish
+  transitionEndPromise(cover).then(() => {
     audio.src = covers[currentIndex].audio;
     title.textContent = covers[currentIndex].title;
 
-    // Add slide-in class based on the opposite direction
-    cover.classList.remove(direction === 'left' ? 'off-screen-right' : 'off-screen-left');
-    cover.classList.add(direction === 'left' ? 'slide-in-right' : 'slide-in-left');
+    const newImage = new Image();
+    newImage.onload = function() {
+      cover.src = newImage.src;
 
-    // Force reflow to restart the animation
-    void cover.offsetWidth;
+      // Wait for next repaint
+      requestAnimationFrame(() => {
+        cover.style.opacity = 1;
+        title.style.opacity = 1;
 
-    // Add slide-in class to move the image into view
-    cover.classList.add('slide-in');
+        // Reset transitioning flag after fade in
+        transitionEndPromise(cover).then(() => {
+          isTransitioning = false;
+        });
+      });
+    };
 
-    // Remove slide-in classes after the transition completes
-    cover.addEventListener('transitionend', function handleSlideIn() {
-      cover.classList.remove('slide-in-left', 'slide-in-right', 'slide-in');
-      isTransitioning = false;
-      cover.removeEventListener('transitionend', handleSlideIn);
-    }, { once: true });
-    // Remove the event listener to avoid multiple triggers
-    cover.removeEventListener('transitionend', handleSlideOut);
+    newImage.src = covers[currentIndex].src;
+  });
 
-    // Remove opacity-transition class after the transition completes
-    title.classList.remove('opacity-transition');
-  }, { once: true });
+  updateIndex(direction);
 }
 
+function transitionEndPromise(element) {
+  return new Promise(resolve => {
+    const onTransitionEnd = () => {
+      element.removeEventListener('transitionend', onTransitionEnd);
+      resolve();
+    };
+    element.addEventListener('transitionend', onTransitionEnd);
+  });
+}
 
-// Debounce function to prevent multiple rapid calls
-function debounceUpdatePlayer() {
-  clearTimeout(debounceTimeout);
-  debounceTimeout = setTimeout(updatePlayer, 200); // Adjust the debounce delay as needed
+function updateIndex(direction) {
+  if (direction === 'right') {
+    currentIndex = (currentIndex + 1) % covers.length;
+  } else if (direction === 'left') {
+    currentIndex = (currentIndex - 1 + covers.length) % covers.length;
+  }
 }
 
 function nextTrack() {
+  var button = document.getElementById('playPauseBtn');
+  button.style.backgroundImage = "url('assets/icones/play.png')";
   direction = 'right';
-  currentIndex++;
-  debounceUpdatePlayer();
+  updatePlayer();
 }
 
 function prevTrack() {
+  var button = document.getElementById('playPauseBtn');
+  button.style.backgroundImage = "url('assets/icones/play.png')";
   direction = 'left';
-  currentIndex--;
-  debounceUpdatePlayer();
+  updatePlayer();
 }
 
 function togglePlay() {
@@ -146,3 +139,8 @@ function togglePlay() {
   }
 }
 
+// Adding event listener for when the audio ends
+document.getElementById('audioPlayer').addEventListener('ended', function() {
+  var button = document.getElementById('playPauseBtn');
+  button.style.backgroundImage = "url('assets/icones/play.png')";
+});
