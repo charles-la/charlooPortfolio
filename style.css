@@ -42,10 +42,18 @@ nav {
 }
 
 .nav-links {
-  gap: 3.5rem;
+  gap: 3.6rem;
   list-style: none;
   font-size: 1.5rem;
 }
+
+.nav-links-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;  /* Adjust this value to control vertical spacing */
+  align-items: center;  /* Centers items horizontally */
+}
+
 
 a {
   color: black;
@@ -113,17 +121,35 @@ a:hover {
   height: 100%;
   background-color: white;
   z-index: 100;
-  display: none;
+  display: flex; /* Keep flex display always on */
   text-align: center;
   justify-content: center;
   align-items: center;
   padding-top: 0px;
-  animation: fadeIn 0.5s ease-out forwards;
-  /* Apply the animation */
+  opacity: 0;
+  pointer-events: none; /* Use pointer-events instead of display */
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: all 300ms ease;
+}
+
+.menu-links a:hover {
+  color: #778DA9;
+}
+
+.menu-links.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .menu-links.fade-out {
-  animation: fadeOut 0.65s ease-out forwards;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .menu-links ul {
@@ -144,6 +170,12 @@ a:hover {
 
 #hamburger-nav {
   display: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 /*
@@ -794,7 +826,8 @@ footer nav {
   background-position: center;
 }
 
-#cover1, #sampleTitle {
+#cover1,
+#sampleTitle {
   opacity: 1;
   transition: opacity 0.3s ease;
   will-change: opacity;
@@ -818,59 +851,3 @@ footer nav {
   height: 220px;
   transition: opacity 0.3s ease;
 }
-
-.fade-out {
-  opacity: 0 !important;
-}
-
-
-
-
-
-/* BUTTONS */
-/* 
-.btn-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.btn {
-  font-weight: 600;
-  transition: all 300ms ease;
-  padding: 1rem;
-  width: 8rem;
-  border-radius: 2rem;
-}
-
-.btn-color-1,
-.btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
-}
-
-.btn-color-1:hover,
-.btn-color-2:hover {
-  cursor: pointer;
-}
-
-.btn-color-1,
-.btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
-}
-
-.btn-color-1:hover {
-  background: rgb(0, 0, 0);
-}
-
-.btn-color-2 {
-  background: none;
-}
-
-.btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
-}
-
-.btn-container {
-  gap: 1rem;
-} */

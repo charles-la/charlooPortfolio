@@ -1,31 +1,45 @@
 // Mobile menu ------------------------------------------------------------------------
+/* filepath: /home/clang/charloo/charlooPortfolio/script.js */
 function toggleMenu() {
-  var element = document.querySelector('.menu-links');
+  const element = document.querySelector('.menu-links');
+  const body = document.body;
+  
   if (element.classList.contains('visible')) {
-    element.classList.add('fade-out'); // Begin fade-out animation
-    setTimeout(() => {
-      element.classList.remove('visible', 'fade-out');
-      element.style.display = 'none'; // Hide the menu after animation completes
-    }, 650); // Match the timeout to the duration of the fade-out animation
+    // Fade out
+    element.classList.add('fade-out');
+    body.classList.remove('no-scroll'); // Enable scrolling
+    
+    element.addEventListener('transitionend', function hide() {
+      element.classList.remove('visible');
+      element.removeEventListener('transitionend', hide);
+    }, { once: true });
   } else {
-    element.style.display = 'flex'; // Set display to flex before adding 'visible' for animation to work
+    // Fade in
+    element.classList.remove('fade-out');
+    body.classList.add('no-scroll'); // Disable scrolling
+    
+    // Force reflow
+    void element.offsetHeight;
     element.classList.add('visible');
   }
 }
 
+// Also update the click handler for menu links
 document.querySelectorAll('.menu-links a').forEach(link => {
   link.addEventListener('click', () => {
-    var menu = document.querySelector('.menu-links');
+    const menu = document.querySelector('.menu-links');
+    const body = document.body;
+    
     menu.classList.add('fade-out');
-    setTimeout(() => {
-      menu.classList.remove('visible', 'fade-out');
-      menu.style.display = 'none';
+    body.classList.remove('no-scroll'); // Enable scrolling when clicking a link
+    
+    menu.addEventListener('transitionend', () => {
+      menu.classList.remove('visible');
       document.querySelector('.menu').classList.remove('opened');
       document.querySelector('.menu').setAttribute('aria-expanded', 'false');
-    }, 650); // Ensure this matches the duration of the fade-out animation
+    }, { once: true });
   });
 });
-
 
 // Contact Button Link ----------------------------------------------------------------
 function openLinkInNewTab() {
