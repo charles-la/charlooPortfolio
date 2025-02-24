@@ -286,18 +286,10 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: fixed;
   display: flex;
   justify-content: center;
   gap: 5rem;
   height: 80vh;
-}
-
-#projects, #about, #contact {
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 #projects {
