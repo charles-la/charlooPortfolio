@@ -38,11 +38,11 @@ nav {
   background-color: rgb(255, 255, 255);
   justify-content: space-around;
   align-items: center;
-  height: 17vh;
+  height: 11vh;
 }
 
 .nav-links {
-  gap: 3.6rem;
+  gap: 5.5rem;
   list-style: none;
   font-size: 1.5rem;
 }
@@ -63,7 +63,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  text-underline-offset: 1rem;
+  text-underline-offset: 0.6rem;
   /* color: grey; */
   color: #778DA9;
   text-decoration-color: #778DA9;
@@ -256,10 +256,24 @@ a:hover {
 /* SECTIONS */
 section {
   padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
+  height: 96dvh;
+  margin: 0 22rem;
   box-sizing: border-box;
   min-height: fit-content;
+}
+
+@supports not (height: 100dvh) {
+  section {
+    height: 96vh;
+  }
+  
+  #profile {
+    height: 86vh;
+  }
+  
+  #contact {
+    height: 80vh;
+  }
 }
 
 /* Arrow */
@@ -280,16 +294,20 @@ section {
 /* PROFILE SECTION */
 #profile {
   /* filter: brightness(250%); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.8);
   background-blend-mode: lighten;
   background-image: url('assets/photos/charloo.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center center;
-  display: flex;
+  background-repeat: no-repeat;
+  /* display: flex; */
   justify-content: center;
-  gap: 5rem;
-  height: 80vh;
+  gap: 1rem;
+  height: 86dvh;
+  padding: 0;
 }
 
 #projects {
@@ -320,15 +338,24 @@ section {
 }
 
 .section__pic-container {
-  display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
+  height: 300px;
+  width: 300px;
+  /* margin: auto 0; */
+  margin: -3.5rem 0 0 0;
+  padding: 0;
+}
+
+.section__pic-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .section__text {
   align-self: center;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .section__text p {
@@ -342,20 +369,21 @@ section {
 }
 
 .section__text__p2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
+  font-size: 1.45rem;
+  text-align: center;
+  font-weight: normal;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 2.4rem;
   text-align: center;
 }
 
 #socials-container {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  gap: 1.3rem;
+  margin-top: 1.4rem;
+  gap: 1.2rem;
 }
 
 /* ICONS */
@@ -366,10 +394,11 @@ section {
 
 .icon-network {
   cursor: pointer;
-  height: 2rem;
+  height: 1.9rem;
   justify-content: center;
   transition: transform 0.3s;
-  margin-right: 1.5px;
+  margin-top: 1.5px;
+  margin-right: 1.2px;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -486,21 +515,28 @@ section {
 
 #projects {
   position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .title-container {
-  text-align: center;
+  /* text-align: center; */
   /* Center-align the text */
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   /* Add spacing below the title */
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 5%;
 }
 
 .container-project {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 input[type=radio] {
@@ -665,7 +701,7 @@ input[type=radio] {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 80vh;
+  height: 80dvh;
 }
 
 .contact-info-upper-container {
