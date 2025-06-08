@@ -257,7 +257,7 @@ a:hover {
 section {
   padding-top: 4vh;
   height: 96dvh;
-  margin: 0 22rem;
+  margin: 0 16rem;
   box-sizing: border-box;
   min-height: fit-content;
 }
@@ -341,7 +341,7 @@ section {
   height: 300px;
   width: 300px;
   /* margin: auto 0; */
-  margin: -3.5rem 0 0 0;
+  margin: -3rem 0 0 0;
   padding: 0;
 }
 
@@ -382,7 +382,7 @@ section {
 #socials-container {
   display: flex;
   justify-content: center;
-  margin-top: 1.4rem;
+  margin-top: 1rem;
   gap: 1.2rem;
 }
 
@@ -397,7 +397,7 @@ section {
   height: 1.9rem;
   justify-content: center;
   transition: transform 0.3s;
-  margin-top: 1.5px;
+  margin-top: 1px;
   margin-right: 1.2px;
 }
 
