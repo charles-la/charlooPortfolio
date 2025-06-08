@@ -338,8 +338,8 @@ section {
 }
 
 .section__pic-container {
-  height: 300px;
-  width: 300px;
+  height: 320px;
+  width: 320px;
   /* margin: auto 0; */
   margin: -3rem 0 0 0;
   padding: 0;
@@ -856,7 +856,7 @@ footer nav {
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   width: 90%;
   position: absolute;
-  max-width: 15rem;  /* Prevent container from getting too large */
+  max-width: 16rem;  /* Prevent container from getting too large */
   margin: 0 auto;
 }
 
@@ -876,7 +876,7 @@ footer nav {
   width: 100%;  /* Relative to container width */
   aspect-ratio: 1 / 1;  /* Maintain square shape */
   border-radius: 0.5rem;
-  margin-bottom: 5%;
+  margin-bottom: 1rem;
   overflow: hidden;
   display: flex;
 }
