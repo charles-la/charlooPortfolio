@@ -850,6 +850,7 @@ footer nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: #778DA9;
   padding: 2.5vh;
   border-radius: 0.5rem;
@@ -857,7 +858,7 @@ footer nav {
   width: 90%;
   position: absolute;
   max-width: 16rem;  /* Prevent container from getting too large */
-  margin: 0 auto;
+  margin: 0;
 }
 
 #cover1,
@@ -886,6 +887,8 @@ footer nav {
   /* margin-bottom: 1rem; */
   overflow: hidden;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 .cover-carousel img {
