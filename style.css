@@ -50,8 +50,10 @@ nav {
 .nav-links-2 {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;  /* Adjust this value to control vertical spacing */
-  align-items: center;  /* Centers items horizontally */
+  gap: 1.5rem;
+  /* Adjust this value to control vertical spacing */
+  align-items: center;
+  /* Centers items horizontally */
 }
 
 
@@ -121,13 +123,15 @@ a:hover {
   height: 100%;
   background-color: white;
   z-index: 100;
-  display: flex; /* Keep flex display always on */
+  display: flex;
+  /* Keep flex display always on */
   text-align: center;
   justify-content: center;
   align-items: center;
   padding-top: 0px;
   opacity: 0;
-  pointer-events: none; /* Use pointer-events instead of display */
+  pointer-events: none;
+  /* Use pointer-events instead of display */
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
@@ -256,24 +260,10 @@ a:hover {
 /* SECTIONS */
 section {
   padding-top: 4vh;
-  height: 96dvh;
-  margin: 0 16rem;
+  height: 96vh;
+  margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
-}
-
-@supports not (height: 100dvh) {
-  section {
-    height: 96vh;
-  }
-  
-  #profile {
-    height: 86vh;
-  }
-  
-  #contact {
-    height: 80vh;
-  }
 }
 
 /* Arrow */
@@ -289,6 +279,11 @@ section {
   .arrow:hover {
     transform: scale(1.25);
   }
+
+  .arrow:active {
+    transform: scale(1.1) translateY(4px);
+  }
+
 }
 
 /* PROFILE SECTION */
@@ -297,49 +292,49 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.87);
   background-blend-mode: lighten;
-  background-image: url('assets/photos/charloo.jpg');
+  background-image: url('assets/photos/charloo.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   /* display: flex; */
   justify-content: center;
   gap: 1rem;
-  height: 86dvh;
+  height: 86vh;
   padding: 0;
 }
 
 #projects {
-  background-color: rgba(135, 135, 135, 0.8);
+  background-color: rgba(135, 135, 135, 0.7);
   background-blend-mode: lighten;
-  background-image: url('assets/photos/darkbike2.jpg');
+  background-image: url('assets/photos/darkbike.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 #about {
-  background-color: rgb(255, 255, 255, 0.8);
+  background-color: rgb(255, 255, 255, 0.75);
   background-blend-mode: lighten;
-  background-image: url('assets/photos/bikeday.jpeg');
+  background-image: url('assets/photos/bikeday.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 #contact {
-  background-color: rgba(125, 125, 125, 0.95);
+  background-color: rgba(125, 125, 125, 0.9);
   background-blend-mode: lighten;
-  background-image: url('assets/photos/Marche.jpeg');
+  background-image: url('assets/photos/marche.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .section__pic-container {
-  height: 320px;
-  width: 320px;
+  height: 300px;
+  width: 300px;
   /* margin: auto 0; */
   margin: -3rem 0 0 0;
   padding: 0;
@@ -349,13 +344,15 @@ section {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 .section__text {
   align-self: center;
   text-align: center;
   margin: 0;
-  padding: 0;
+  padding: 1rem 0 0 0;
 }
 
 .section__text p {
@@ -437,7 +434,7 @@ section {
   border-radius: 1rem;
   text-align: center;
   animation: display 30s infinite;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 .text-ctn {
@@ -704,7 +701,7 @@ input[type=radio] {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 80dvh;
+  height: 80vh;
 }
 
 .contact-info-upper-container {
@@ -718,7 +715,7 @@ input[type=radio] {
   padding: 0.2rem;
   cursor: pointer;
   z-index: 2;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 .contact-info-upper-container:hover {
@@ -810,6 +807,12 @@ footer nav {
     transform: scale(1.25);
   }
 
+  #playPauseBtn:active,
+  #prevBtn:active,
+  #nextBtn:active {
+    transform: scale(1.1) translateY(4px);
+  }
+
 }
 
 #prevBtn {
@@ -857,7 +860,8 @@ footer nav {
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   width: 90%;
   position: absolute;
-  max-width: 16rem;  /* Prevent container from getting too large */
+  max-width: 16rem;
+  /* Prevent container from getting too large */
   margin: 0;
 }
 
@@ -873,16 +877,19 @@ footer nav {
 #sampleTitle {
   margin-top: 0.5rem;
 }
-  
+
 
 .fade-out {
   opacity: 0 !important;
 }
+
 #cover1,
 .cover-carousel {
   position: relative;
-  width: 100%;  /* Relative to container width */
-  aspect-ratio: 1 / 1;  /* Maintain square shape */
+  width: 100%;
+  /* Relative to container width */
+  aspect-ratio: 1 / 1;
+  /* Maintain square shape */
   border-radius: 0.5rem;
   /* margin-bottom: 1rem; */
   overflow: hidden;
