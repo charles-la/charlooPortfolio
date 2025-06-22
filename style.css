@@ -863,6 +863,7 @@ footer nav {
   max-width: 16rem;
   /* Prevent container from getting too large */
   margin: 0;
+  gap: 0;
 }
 
 #cover1,
@@ -906,4 +907,5 @@ footer nav {
   height: 100%;
   object-fit: cover;
   transition: opacity 0.3s ease;
+  display: block;
 }
