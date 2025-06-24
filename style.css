@@ -894,11 +894,7 @@ footer nav {
 .cover-carousel {
   position: relative;
   width: 100%;
-  /* Relative to container width */
-  aspect-ratio: 1 / 1;
-  /* Maintain square shape */
   border-radius: 0.5rem;
-  /* margin-bottom: 1rem; */
   overflow: hidden;
   display: flex;
   margin: 0;
