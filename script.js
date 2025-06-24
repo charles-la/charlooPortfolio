@@ -158,3 +158,61 @@ document.getElementById('audioPlayer').addEventListener('ended', function() {
   var button = document.getElementById('playPauseBtn');
   button.style.backgroundImage = "url('assets/icones/play.png')";
 });
+
+
+// About ----------------------------------------------------------------
+const aboutDetails = [
+  {
+    icon: "./assets/icones/about/experience.png",
+    title: "Experience",
+    text: "+5 years<br />Producing music in my bedroom"
+  },
+  {
+    icon: "./assets/icones/about/school.png",
+    title: "Education",
+    text: "B.Sc. Computer Sciences<br />Sherbrooke University, Qc, Ca"
+  },
+  {
+    icon: "./assets/icones/about/location-pointer.png",
+    title: "Location",
+    text: "Currently living in<br />Montréal"
+  },
+  {
+    icon: "./assets/icones/about/user.png",
+    title: "Music Genre",
+    text: "RnB, Lo-Fi, Chill,<br />Hip-Hop, Soul, Indie"
+  },
+  {
+    icon: "./assets/icones/about/education.png",
+    title: "Collab",
+    text: "Ready and willing to partner<br />with artists for projects"
+  },
+  {
+    icon: "./assets/icones/about/heart.png",
+    title: "Love",
+    text: "Continuously dreaming<br />Keep trying new stuff"
+  }
+];
+
+let aboutIndex = 0;
+
+function renderAboutDetail() {
+  const detail = aboutDetails[aboutIndex];
+  document.getElementById('about-details').innerHTML = `
+    <img src="${detail.icon}" alt="${detail.title} icon" class="icon" />
+    <h3>${detail.title}</h3>
+    <p>${detail.text}</p>
+  `;
+}
+
+function prevAboutDetail() {
+  aboutIndex = (aboutIndex - 1 + aboutDetails.length) % aboutDetails.length;
+  renderAboutDetail();
+}
+
+function nextAboutDetail() {
+  aboutIndex = (aboutIndex + 1) % aboutDetails.length;
+  renderAboutDetail();
+}
+
+document.addEventListener('DOMContentLoaded', renderAboutDetail);

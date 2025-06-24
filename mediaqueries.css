@@ -19,10 +19,6 @@
     width: 275px;
     height: 275px;
   }
-
-  .details-container {
-    width: 60%;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -127,13 +123,13 @@
   }
 
   /* About */
-  .details-container {
-    width: 80%;
-    overflow-x: hidden;
-  }
 
   .container-audio-player {
     max-width: 12rem;
+  }
+
+  .details-container {
+    padding: 1rem 0rem;
   }
 
 }
