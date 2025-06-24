@@ -875,10 +875,13 @@ footer nav {
   will-change: opacity;
 }
 
+#sampleTitleDiv {
+  margin-top: 10px;
+}
+
 #sampleTitle {
   margin: 0;
   padding: 0;
-  margin-top: 0.5rem;
   line-height: 1;
 }
 
