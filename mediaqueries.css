@@ -56,13 +56,13 @@
 
   /* Background image resize */
   #projects {
-    background-size: 370%;
+    background-size: auto 100%;
     background-position: 35% 30%;
   }
 
   #contact {
-    background-size: 170%;
-    background-position: 50% 80%;
+    background-size: auto 140%;
+    background-position: 50% 100%;
   }
 
   article {
